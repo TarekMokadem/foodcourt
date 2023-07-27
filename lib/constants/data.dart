@@ -1,22 +1,22 @@
-import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/models/cart_model.dart';
-import 'package:fudiee/models/category_model.dart';
-import 'package:fudiee/models/offer_model.dart';
-import 'package:fudiee/models/onboarding_model.dart';
-import 'package:fudiee/models/popular_model.dart';
+import 'package:foodcourt/constants/assets_constant.dart';
+import 'package:foodcourt/models/cart_model.dart';
+import 'package:foodcourt/models/category_model.dart';
+import 'package:foodcourt/models/offer_model.dart';
+import 'package:foodcourt/models/onboarding_model.dart';
+import 'package:foodcourt/models/popular_model.dart';
 
 List<OnboardingInfoData> onboardingData = [
   OnboardingInfoData(
     image: Assets.onb1,
     title: 'Bringing joy to your door.',
     subtitle:
-        '''Fudiee is here to deliver only joy to you, our services are top notch and our meals are totally irresistible.''',
+        '''foodcourt is here to deliver only joy to you, our services are top notch and our meals are totally irresistible.''',
   ),
   OnboardingInfoData(
     image: Assets.onb2,
     title: 'Don’t starve, just order.',
     subtitle:
-        '''Loved one, you don’t need to starve today. Fudiee is here to satisfy your cravings for a good meal, just order!''',
+        '''Loved one, you don’t need to starve today. foodcourt is here to satisfy your cravings for a good meal, just order!''',
   ),
   OnboardingInfoData(
     image: Assets.onb3,

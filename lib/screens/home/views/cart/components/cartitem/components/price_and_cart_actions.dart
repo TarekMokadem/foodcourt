@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudiee/controllers/cart/cart_controller.dart';
-import 'package:fudiee/screens/home/views/cart/components/cartitem/components/cart_action_buttons.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/controllers/cart/cart_controller.dart';
+import 'package:foodcourt/screens/home/views/cart/components/cartitem/components/cart_action_buttons.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 import 'package:get/get.dart';
 
 class BuildPriceAndCartActions extends StatelessWidget {

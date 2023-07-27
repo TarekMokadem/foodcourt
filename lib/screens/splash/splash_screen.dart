@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/screens/onboarding/onboarding_screen.dart';
+import 'package:foodcourt/constants/assets_constant.dart';
+import 'package:foodcourt/screens/onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:fudiee/constants/data.dart';
+import 'package:foodcourt/constants/data.dart';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {

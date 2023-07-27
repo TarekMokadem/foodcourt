@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 
 class AppBottomBar extends StatelessWidget {
   const AppBottomBar({

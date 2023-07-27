@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudiee/constants/data.dart';
-import 'package:fudiee/screens/auth/auth_screen.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/constants/data.dart';
+import 'package:foodcourt/screens/auth/auth_screen.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

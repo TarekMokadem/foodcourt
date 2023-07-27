@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 
 class CartActionButtons extends StatelessWidget {
   const CartActionButtons({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/screens/auth/signin.dart';
-import 'package:fudiee/screens/auth/signup.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/constants/assets_constant.dart';
+import 'package:foodcourt/screens/auth/signin.dart';
+import 'package:foodcourt/screens/auth/signup.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 import 'package:get/get.dart';
 
 class AuthScreen extends StatefulWidget {

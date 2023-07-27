@@ -4,7 +4,7 @@ import './components/add_meal.dart';
 import './components/build_image.dart';
 import './components/descriptions_and_ratings.dart';
 import './components/price_and_cart_actions.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CartItem extends StatelessWidget {
@@ -38,7 +38,7 @@ class CartItem extends StatelessWidget {
             effect: const WormEffect(
               activeDotColor: Colors.pink,
               spacing: 12,
-            ),
+            ), size: const Size(0, 0),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 import 'package:get/get.dart';
 
 class InitialBindings extends Bindings {

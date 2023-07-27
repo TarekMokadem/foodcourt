@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudiee/bindings/bindings.dart';
-import 'package:fudiee/routes/router.dart';
-import 'package:fudiee/screens/splash/splash_screen.dart';
-import 'package:fudiee/themes/theme.dart';
+import 'package:foodcourt/bindings/bindings.dart';
+import 'package:foodcourt/routes/router.dart';
+import 'package:foodcourt/screens/splash/splash_screen.dart';
+import 'package:foodcourt/themes/theme.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       builder: (context, _) {
         return GetMaterialApp(
           initialBinding: InitialBindings(),
-          title: 'Fudiee',
+          title: 'foodcourt',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.buildTheme(context),
           initialRoute: SplashScreen.routeName,

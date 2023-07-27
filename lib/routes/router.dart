@@ -1,8 +1,8 @@
-import 'package:fudiee/controllers/cart/cart_controller.dart';
-import 'package:fudiee/screens/auth/auth_screen.dart';
-import 'package:fudiee/screens/home/home_screen.dart';
-import 'package:fudiee/screens/onboarding/onboarding_screen.dart';
-import 'package:fudiee/screens/splash/splash_screen.dart';
+import 'package:foodcourt/controllers/cart/cart_controller.dart';
+import 'package:foodcourt/screens/auth/auth_screen.dart';
+import 'package:foodcourt/screens/home/home_screen.dart';
+import 'package:foodcourt/screens/onboarding/onboarding_screen.dart';
+import 'package:foodcourt/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
 
 class AppRouter {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/controllers/cart/cart_controller.dart';
-import 'package:fudiee/screens/home/views/cart/components/cartitem/cart_item.dart';
+import 'package:foodcourt/controllers/cart/cart_controller.dart';
+import 'package:foodcourt/screens/home/views/cart/components/cartitem/cart_item.dart';
 import 'package:get/get.dart';
 
 class CartView extends StatelessWidget {

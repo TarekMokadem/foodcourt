@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:fudiee/controllers/cart/cart_controller.dart';
+import 'package:foodcourt/controllers/cart/cart_controller.dart';
 import 'package:get/get.dart';
 
 class BuildDescriptionsAndRatings extends GetView<CartController> {

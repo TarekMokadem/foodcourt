@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/constants/assets_constant.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({

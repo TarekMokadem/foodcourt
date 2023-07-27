@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/screens/home/views/home/components/bottom_app_bar.dart';
-import 'package:fudiee/screens/home/views/cart/cart_view.dart';
-import 'package:fudiee/screens/home/views/home/home_view.dart';
+import 'package:foodcourt/screens/home/views/home/components/bottom_app_bar.dart';
+import 'package:foodcourt/screens/home/views/cart/cart_view.dart';
+import 'package:foodcourt/screens/home/views/home/home_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

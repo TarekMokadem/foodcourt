@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/constants/assets_constant.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 
 import 'meal_suggestion_widget.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({

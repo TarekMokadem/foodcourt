@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/screens/home/widgets/app_circle_image.dart';
+import 'package:foodcourt/constants/assets_constant.dart';
+import 'package:foodcourt/screens/home/widgets/app_circle_image.dart';
 
 class AvaterHeaderWithNotifications extends StatelessWidget {
   const AvaterHeaderWithNotifications({

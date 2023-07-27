@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/screens/home/home_screen.dart';
-import 'package:fudiee/screens/onboarding/onboarding_screen.dart';
-import 'package:fudiee/themes/app_colors.dart';
-import 'package:fudiee/widgets/textfield/app_textfield.dart';
+import 'package:foodcourt/screens/home/home_screen.dart';
+import 'package:foodcourt/screens/onboarding/onboarding_screen.dart';
+import 'package:foodcourt/themes/app_colors.dart';
+import 'package:foodcourt/widgets/textfield/app_textfield.dart';
 import 'package:get/get.dart';
 
 class SignIn extends StatefulWidget {

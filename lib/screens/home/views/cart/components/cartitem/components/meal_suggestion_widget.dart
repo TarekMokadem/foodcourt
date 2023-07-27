@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/screens/home/widgets/fadein_image.dart';
-import 'package:fudiee/themes/app_colors.dart';
+import 'package:foodcourt/screens/home/widgets/fadein_image.dart';
+import 'package:foodcourt/themes/app_colors.dart';
 
 class MealSuggestionWidget extends StatelessWidget {
   const MealSuggestionWidget({

@@ -1,4 +1,4 @@
-package com.example.fudiee
+package com.example.foodcourt
 
 import io.flutter.embedding.android.FlutterActivity
 

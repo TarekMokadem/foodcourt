@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudiee/screens/home/widgets/fadein_image.dart';
+import 'package:foodcourt/screens/home/widgets/fadein_image.dart';
 import 'package:get/get.dart';
 
 class BuildImage extends StatelessWidget {

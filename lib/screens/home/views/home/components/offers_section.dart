@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudiee/constants/data.dart';
-import 'package:fudiee/screens/home/widgets/offer_card.dart';
+import 'package:foodcourt/constants/data.dart';
+import 'package:foodcourt/screens/home/widgets/offer_card.dart';
 
 class OffersSection extends StatelessWidget {
   const OffersSection({

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudiee/constants/data.dart';
-import 'package:fudiee/screens/home/widgets/app_header.dart';
-import 'package:fudiee/screens/home/widgets/category_card.dart';
-import 'package:fudiee/screens/home/widgets/search_bar.dart';
+import 'package:foodcourt/constants/data.dart';
+import 'package:foodcourt/screens/home/widgets/app_header.dart';
+import 'package:foodcourt/screens/home/widgets/category_card.dart';
 
 import 'components/header_section.dart';
 import 'components/offers_section.dart';
