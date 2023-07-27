@@ -36,32 +36,36 @@ class AppBottomBar extends StatelessWidget {
         selectedFontSize: 12.sp,
         unselectedFontSize: 11.sp,
         onTap: onTap,
-        items: const [
+        items:  [
           BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home_outlined),
-            activeIcon: BottomBarIndicator(icon: Icon(Icons.home)),
+            label: '',
+            icon: Image.asset(width: 40,'assets/images/wolly_logo.png'),
+            activeIcon: BottomBarIndicator(
+                icon: Image.asset(width: 50,'assets/images/wolly_logo.png')),
           ),
           BottomNavigationBarItem(
-            label: 'Favorite',
-            icon: Icon(Icons.favorite_border),
-            activeIcon: BottomBarIndicator(icon: Icon(Icons.favorite)),
+            label: '',
+            icon: Image.asset(width: 30,'assets/images/logo_pokenio.png'),
+            activeIcon: BottomBarIndicator(
+                icon: Image.asset(width: 40,'assets/images/logo_pokenio.png')),
           ),
           BottomNavigationBarItem(
-            label: 'Cart',
-            icon: Icon(Icons.shopping_cart_outlined),
-            activeIcon: BottomBarIndicator(icon: Icon(Icons.shopping_cart)),
+            label: '',
+            icon: Image.asset(width: 35,'assets/images/marache_coffee_logo.png'),
+            activeIcon: BottomBarIndicator(
+                icon: Image.asset(width: 45,'assets/images/marache_coffee_logo.png')),
           ),
           BottomNavigationBarItem(
-            label: 'Search',
-            icon: Icon(CupertinoIcons.search),
-            activeIcon: BottomBarIndicator(icon: Icon(CupertinoIcons.search)),
+            label: '',
+            icon: Image.asset(width: 35,'assets/images/logo_pizza_time.png'),
+            activeIcon: BottomBarIndicator(
+                icon: Image.asset(width: 38,'assets/images/logo_pizza_time.png')),
           ),
           BottomNavigationBarItem(
-            label: 'Profile',
-            icon: Icon(CupertinoIcons.profile_circled),
-            activeIcon:
-                BottomBarIndicator(icon: Icon(CupertinoIcons.profile_circled)),
+            label: '',
+            icon: Image.asset(width: 40,'assets/images/logo_ppg.png'),
+            activeIcon: BottomBarIndicator(
+                icon: Image.asset(width: 50,'assets/images/logo_ppg.png')),
           ),
         ],
       ),
