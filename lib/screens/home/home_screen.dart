@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:foodcourt/screens/home/views/home/components/bottom_app_bar.dart';
 import 'package:foodcourt/screens/home/views/cart/cart_view.dart';
 import 'package:foodcourt/screens/home/views/home/home_view.dart';
+import 'package:foodcourt/screens/home/views/home/pizza_time.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             HomeView(),
             SizedBox(child: Center(child: CircularProgressIndicator())),
             CartView(),
-            SizedBox(child: Center(child: CircularProgressIndicator())),
+            PizzaTime(),
             SizedBox(child: Center(child: CircularProgressIndicator())),
           ],
           onPageChanged: (value) =>
