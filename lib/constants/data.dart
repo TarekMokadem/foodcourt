@@ -39,6 +39,7 @@ List<OfferModel> offerData = [
   )
 ];
 
+//categoryData by default 
 List<CategoryModel> categoryData = [
   CategoryModel(
     category: 'Fast Food',
@@ -58,6 +59,27 @@ List<CategoryModel> categoryData = [
   ),
 ];
 
+//categoryData for pizza time (pizza tomate, crèmes frèches, spéciales, etc..)
+List<CategoryModel> categoryDataPizza = [
+  CategoryModel(
+    category: 'Pizza Sauce Tomate',
+    image: Assets.pizzaQFromages,
+  ),
+  CategoryModel(
+    category: 'Pizza Crème Fraîche',
+    image: Assets.pizzaChevreMiel,
+  ),
+  CategoryModel(
+    category: 'Pizza Spéciales',
+    image: Assets.pizza1,
+  ),
+  CategoryModel(
+    category: 'Finger Food',
+    image: Assets.fruits,
+  ),
+];
+
+//popularData by default 
 List<PopularModel> popularData = [
   PopularModel(
     title: 'African Salad',
@@ -73,6 +95,28 @@ List<PopularModel> popularData = [
   ),
   PopularModel(
     title: 'Pizza',
+    deliveryTime: 5,
+    price: 12,
+    image: Assets.pizza2,
+  ),
+];
+
+//popularData for pizza time
+List<PopularModel> popularDataPizza = [
+  PopularModel(
+    title: 'La Pimento',
+    deliveryTime: 12,
+    price: 11.90,
+    image: Assets.pizzaPimento,
+  ),
+  PopularModel(
+    title: 'La Bolywood',
+    deliveryTime: 15,
+    price: 35,
+    image: Assets.jollofRice,
+  ),
+  PopularModel(
+    title: 'La Campagnarde',
     deliveryTime: 5,
     price: 12,
     image: Assets.pizza2,

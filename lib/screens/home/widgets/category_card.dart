@@ -21,7 +21,7 @@ class CategoryCard extends StatelessWidget {
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(1),
         boxShadow: [lightBoxShadow],
       ),
       child: ClipRRect(
@@ -38,7 +38,8 @@ class CategoryCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AppCircleImage(image: image),
-                  Text(category),
+                  const SizedBox(height: 10),
+                  Text('$category\n', maxLines: 2, textAlign: TextAlign.center),
                 ],
               ),
             ),

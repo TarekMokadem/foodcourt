@@ -33,7 +33,8 @@ class _PizzaTimeState extends State<PizzaTime> {
             const SizedBox(height: 50),
             const AvaterHeaderWithNotifications(),
             const SizedBox(height: 35),
-            const SearchBar(),
+            //const SearchBar(),
+            searchBox(),
             const SizedBox(height: 30),
             // offers section
             const OffersSection(),
@@ -53,7 +54,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                 itemCount: 4,
                 separatorBuilder: (context, index) => const SizedBox(width: 23),
                 itemBuilder: (context, index) {
-                  final category = categoryData[index];
+                  final category = categoryDataPizza[index];
                   return CategoryCard(
                     category: category.category,
                     image: category.image,
@@ -89,7 +90,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                 itemCount: 3,
                 separatorBuilder: (context, index) => const SizedBox(width: 23),
                 itemBuilder: (_, index) {
-                  final food = popularData[index];
+                  final food = popularDataPizza[index];
                   return PopularNowCard(
                     title: food.title,
                     deliveryTime: food.deliveryTime,
@@ -115,3 +116,32 @@ class _PizzaTimeState extends State<PizzaTime> {
     );
   }
 }
+
+Widget searchBox() {
+    return Container(
+              //padding: const EdgeInsets.symmetric(horizontal: 10),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                //borderRadius: BorderRadius.circular(20),
+              ),
+              child: const TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(top: 0, bottom: 0),
+                  prefixIcon: Icon(
+                    Icons.search, 
+                    color: Colors.black, 
+                    size: 20,
+                  ),
+                  prefixIconConstraints: BoxConstraints(
+                    maxHeight: 20, 
+                    minWidth: 25
+                  ),
+                  border: InputBorder.none,
+                  hintText: 'Search',
+                  hintStyle: TextStyle(color: Colors.grey),
+                ),
+              ),
+            );
+  }
+
+

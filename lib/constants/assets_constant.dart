@@ -2,6 +2,10 @@ class Assets {
   static String imagePath = 'assets/images';
   static String iconPath = 'assets/icons';
 
+  static String pizzaQFromages = '$imagePath/pizzaQFromages.webp';
+  static String pizzaChevreMiel = '$imagePath/pizzaChevreMiel.webp';
+  static String pizzaPimento = '$imagePath/pizzaPimento.webp';
+
   static String slashImg = '$imagePath/splash.png';
   static String onb1 = '$imagePath/onboarding1.png';
   static String onb2 = '$imagePath/onboarding2.png';

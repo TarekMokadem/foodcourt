@@ -80,8 +80,13 @@ class PopularNowCard extends StatelessWidget {
                             color: Colors.black87,
                           ),
                         ),
-                        const SizedBox(height: 4),
-                        Text('\$$price'),
+                        const SizedBox(height: 7),
+                        Text(
+                          '$price €',
+                          style: const TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                       ],
                     ),
                     AppIconButton(
