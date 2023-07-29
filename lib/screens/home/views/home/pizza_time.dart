@@ -45,7 +45,7 @@ class _PizzaTimeState extends State<PizzaTime> {
             searchBox(),
             const SizedBox(height: 30),
             // offers section
-            const OffersSection(),
+            // const OffersSection(),
             const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
@@ -115,8 +115,8 @@ class _PizzaTimeState extends State<PizzaTime> {
                 },
               ),
             ),
-            const SizedBox(
-              height: 30,
+             SizedBox(
+              height: MediaQuery.of(context).size.width*0.3,
             ),
           ],
         ),

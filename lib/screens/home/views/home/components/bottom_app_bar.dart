@@ -36,36 +36,63 @@ class AppBottomBar extends StatelessWidget {
         selectedFontSize: 12.sp,
         unselectedFontSize: 11.sp,
         onTap: onTap,
-        items:  [
+        items: [
           BottomNavigationBarItem(
             label: '',
-            icon: Image.asset(width: 40,'assets/images/wolly_logo.png'),
+            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                color: Colors.transparent,
+                elevation: 3,
+                child: Image.asset(width: 40, 'assets/images/wolly_logo.png')),
             activeIcon: BottomBarIndicator(
-                icon: Image.asset(width: 50,'assets/images/wolly_logo.png')),
+                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Colors.transparent,
+                    elevation: 5,child: Image.asset(width: 50, 'assets/images/wolly_logo.png'))),
           ),
           BottomNavigationBarItem(
             label: '',
-            icon: Image.asset(width: 30,'assets/images/logo_pokenio.png'),
+            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                color: Colors.transparent,
+                elevation: 5,child: Image.asset(width: 30, 'assets/images/logo_pokenio.png')),
             activeIcon: BottomBarIndicator(
-                icon: Image.asset(width: 40,'assets/images/logo_pokenio.png')),
+                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Colors.transparent,
+                    elevation: 7,child: Image.asset(width: 40, 'assets/images/logo_pokenio.png'))),
           ),
           BottomNavigationBarItem(
             label: '',
-            icon: Image.asset(width: 35,'assets/images/marache_coffee_logo.png'),
+            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Colors.transparent,
+                    elevation: 3,child: Image.asset(width: 35, 'assets/images/marache_coffee_logo.png')),
             activeIcon: BottomBarIndicator(
-                icon: Image.asset(width: 45,'assets/images/marache_coffee_logo.png')),
+                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                  color: Colors.transparent,
+                  elevation: 5,
+                  child: Image.asset(
+                      width: 45, 'assets/images/marache_coffee_logo.png'),
+                )),
           ),
           BottomNavigationBarItem(
             label: '',
-            icon: Image.asset(width: 35,'assets/images/logo_pizza_time.png'),
+            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                color: Colors.transparent,
+                elevation: 10,child: Image.asset(width: 35, 'assets/images/logo_pizza_time.png')),
             activeIcon: BottomBarIndicator(
-                icon: Image.asset(width: 38,'assets/images/logo_pizza_time.png')),
+                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                  color: Colors.transparent,
+                  elevation: 15,
+                  child: Image.asset(
+                      width: 38, 'assets/images/logo_pizza_time.png'),
+                )),
           ),
           BottomNavigationBarItem(
             label: '',
-            icon: Image.asset(width: 40,'assets/images/logo_ppg.png'),
+            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                color: Colors.transparent,
+                elevation: 7,child: Image.asset(width: 40, 'assets/images/logo_ppg.png')),
             activeIcon: BottomBarIndicator(
-                icon: Image.asset(width: 50,'assets/images/logo_ppg.png')),
+                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Colors.transparent,
+                    elevation: 10,child: Image.asset(width: 50, 'assets/images/logo_ppg.png'))),
           ),
         ],
       ),

@@ -43,7 +43,7 @@ class _PPGState extends State<PPG> {
             searchBox(),
             const SizedBox(height: 30),
             // offers section
-            const OffersSection(),
+            // const OffersSection(),
             const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
@@ -113,8 +113,8 @@ class _PPGState extends State<PPG> {
                 },
               ),
             ),
-            const SizedBox(
-              height: 30,
+             SizedBox(
+              height: MediaQuery.of(context).size.width*0.3,
             ),
           ],
         ),
