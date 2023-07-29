@@ -8,16 +8,16 @@ import 'components/header_section.dart';
 import 'components/offers_section.dart';
 import '../../widgets/popular_now_card.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({
+class WollyWings extends StatefulWidget {
+  const WollyWings({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<WollyWings> createState() => _WollyWingsState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _WollyWingsState extends State<WollyWings> {
   String seletedCategory = '';
   List<String> favorites = [];
 
@@ -25,7 +25,16 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       // height: Get.height,
-      body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color(0xED2D2D2D),
+          // color: Color(0xDBE7BE5E),
+          image: DecorationImage(opacity: 0.25,
+              image: Image.asset('assets/images/boneless.png').image,
+              fit: BoxFit.cover
+          ),
+        ),
+        child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 26.w),
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -33,7 +42,7 @@ class _HomeViewState extends State<HomeView> {
             const SizedBox(height: 50),
             const AvaterHeaderWithNotifications(),
             const SizedBox(height: 35),
-            const SearchBar(),
+            searchBox(),
             const SizedBox(height: 30),
             // offers section
             const OffersSection(),
@@ -67,7 +76,7 @@ class _HomeViewState extends State<HomeView> {
                       });
                     },
                     selected:
-                        seletedCategory == category.category ? true : false,
+                    seletedCategory == category.category ? true : false,
                   );
                 },
               ),
@@ -111,7 +120,34 @@ class _HomeViewState extends State<HomeView> {
             ),
           ],
         ),
-      ),
+      ),),
     );
   }
+}
+
+Widget searchBox() {
+  return Container(
+    //padding: const EdgeInsets.symmetric(horizontal: 10),
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      //borderRadius: BorderRadius.circular(20),
+    ),
+    child: const TextField(
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.only(top: 0, bottom: 0),
+        prefixIcon: Icon(
+          Icons.search,
+          color: Colors.black,
+          size: 20,
+        ),
+        prefixIconConstraints: BoxConstraints(
+            maxHeight: 20,
+            minWidth: 25
+        ),
+        border: InputBorder.none,
+        hintText: 'Search',
+        hintStyle: TextStyle(color: Colors.grey),
+      ),
+    ),
+  );
 }

@@ -41,4 +41,6 @@ class Assets {
   static String cartIcon = '$iconPath/cart_icon.png';
   static String search2Icon = '$iconPath/search2.png';
   static String profileIcon = '$iconPath/profile.png';
+
+  static String pokenioBgImage = '$imagePath/PokenioImages/pokenio/products/2x3smo8487pfzn1ge5fwe.png';
 }
