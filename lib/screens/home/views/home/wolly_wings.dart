@@ -46,7 +46,7 @@ class _WollyWingsState extends State<WollyWings> {
             const SizedBox(height: 30),
             // offers section
             // const OffersSection(),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
               title: 'Categories',

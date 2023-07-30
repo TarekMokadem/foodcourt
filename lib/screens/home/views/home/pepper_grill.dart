@@ -44,7 +44,7 @@ class _PPGState extends State<PPG> {
             const SizedBox(height: 30),
             // offers section
             // const OffersSection(),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
               title: 'Categories',

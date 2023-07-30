@@ -28,7 +28,7 @@ class _PokenioState extends State<Pokenio> {
       body:  Container(
         decoration: BoxDecoration(
           color: Color(0xCA39BFBF),
-          image: DecorationImage(scale: 1,opacity: 0.2,
+          image: DecorationImage(scale: 1,opacity: 0.35,
               image: Image.asset('assets/images/pokebowl.png').image,
               fit: BoxFit.cover
           ),
@@ -45,7 +45,7 @@ class _PokenioState extends State<Pokenio> {
             const SizedBox(height: 30),
             // offers section
             // const OffersSection(),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
               title: 'Categories',

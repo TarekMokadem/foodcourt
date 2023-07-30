@@ -27,8 +27,8 @@ class _PizzaTimeState extends State<PizzaTime> {
       // height: Get.height,
       body: Container(
         decoration: BoxDecoration(
-          color: Color(0xDB1FA958),
-          image: DecorationImage(opacity: 0.35,
+          color: Color(0xE5147A3D),
+          image: DecorationImage(opacity: 0.5,
               image: Image.asset('assets/images/pizzaTime.png').image,
               fit: BoxFit.cover
           ),
@@ -46,7 +46,7 @@ class _PizzaTimeState extends State<PizzaTime> {
             const SizedBox(height: 30),
             // offers section
             // const OffersSection(),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
               title: 'Categories',
