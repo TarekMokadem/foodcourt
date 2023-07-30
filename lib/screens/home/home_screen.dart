@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodcourt/screens/home/views/cart/cart_view.dart';
 import 'package:foodcourt/screens/home/views/home/components/bottom_app_bar.dart';
 import 'package:foodcourt/screens/home/views/home/marache_coffee.dart';
 import 'package:foodcourt/screens/home/views/home/pepper_grill.dart';
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: BuildPages(
           currentPage: currentBottomIndex,
           pages: const [
+            // CartView(),
             WollyWings(),
             Pokenio(),
             MaracheCoffee(),
