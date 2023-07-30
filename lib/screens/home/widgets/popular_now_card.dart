@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodcourt/screens/home/views/cart/cart_view.dart';
 import 'package:foodcourt/screens/home/widgets/category_card.dart';
 import 'package:foodcourt/themes/app_colors.dart';
 import 'package:foodcourt/widgets/buttons/app_icon_button.dart';
@@ -94,7 +95,9 @@ class PopularNowCard extends StatelessWidget {
                         Icons.add_circle_rounded,
                         color: Colors.pink,
                       ),
-                      onPressed: onPressed,
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CartView()));
+                      },
                     ),
                   ],
                 ),

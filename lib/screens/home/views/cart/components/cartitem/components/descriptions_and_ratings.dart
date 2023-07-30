@@ -8,13 +8,13 @@ class BuildDescriptionsAndRatings extends GetView<CartController> {
     Key? key,
     required this.title,
     required this.desc,
-    required this.rating,
+    //required this.rating,
     required this.index,
   }) : super(key: key);
 
   final String title;
   final String desc;
-  final double rating;
+  //final double rating;
   final int index;
 
   @override
@@ -29,28 +29,28 @@ class BuildDescriptionsAndRatings extends GetView<CartController> {
               Text(
                 title,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 11),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01), 
               SizedBox(
-                width: 320,
+                width: MediaQuery.of(context).size.width * 1,
                 child: Text(
                   desc,
                   style: const TextStyle(
-                    fontSize: 12,
+                    fontSize: 13,
                   ),
                 ),
               )
             ],
           ),
         ),
-        Positioned(
+        /*Positioned(
           top: 0,
           right: 0,
           child: RatingBar.builder(
-            initialRating: rating,
+            //initialRating: rating,
             minRating: 1,
             direction: Axis.horizontal,
             allowHalfRating: true,
@@ -65,7 +65,7 @@ class BuildDescriptionsAndRatings extends GetView<CartController> {
               controller.rate(index, rating);
             },
           ),
-        )
+        )*/
       ],
     );
   }
