@@ -25,7 +25,15 @@ class _PizzaTimeState extends State<PizzaTime> {
   Widget build(BuildContext context) {
     return Scaffold(
       // height: Get.height,
-      body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color(0xE5147A3D),
+          image: DecorationImage(opacity: 0.5,
+              image: Image.asset('assets/images/pizzaTime.png').image,
+              fit: BoxFit.cover
+          ),
+        ),
+        child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 26.w),
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -37,8 +45,8 @@ class _PizzaTimeState extends State<PizzaTime> {
             searchBox(),
             const SizedBox(height: 30),
             // offers section
-            const OffersSection(),
-            const SizedBox(height: 20),
+            // const OffersSection(),
+            // const SizedBox(height: 20),
             HeaderSection(
               onPressed: () {},
               title: 'Categories',
@@ -68,7 +76,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                       });
                     },
                     selected:
-                        seletedCategory == category.category ? true : false,
+                    seletedCategory == category.category ? true : false,
                   );
                 },
               ),
@@ -107,12 +115,12 @@ class _PizzaTimeState extends State<PizzaTime> {
                 },
               ),
             ),
-            const SizedBox(
-              height: 30,
+             SizedBox(
+              height: MediaQuery.of(context).size.width*0.3,
             ),
           ],
         ),
-      ),
+      ),)
     );
   }
 }
