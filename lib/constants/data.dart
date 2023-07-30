@@ -108,18 +108,22 @@ List<PopularModel> popularDataPizza = [
     deliveryTime: 12,
     price: 11.90,
     image: Assets.pizzaPimento,
+    desc: "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
   ),
   PopularModel(
     title: 'La Bolywood',
     deliveryTime: 15,
-    price: 35,
+    price: 11.70,
     image: Assets.jollofRice,
+    desc: "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
+
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
-    price: 12,
+    price: 11.70,
     image: Assets.pizza2,
+    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
 ];
 

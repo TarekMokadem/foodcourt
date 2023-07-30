@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:foodcourt/constants/data.dart';
 import 'package:foodcourt/controllers/cart/cart_controller.dart';
+import 'package:foodcourt/models/popular_model.dart';
 import 'package:foodcourt/screens/home/views/cart/components/cartitem/cart_item.dart';
 import 'package:get/get.dart';
 
 class CartView extends StatelessWidget {
-  const CartView({super.key});
+  const CartView({
+    Key? key,
+    required this.indexPizza
+  }) : super(key: key);
+
+  final int indexPizza;  
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class CartView extends StatelessWidget {
               restorationId: 'cart_view',
               itemCount: state.cartItems.length,
               itemBuilder: (context, index) {
-                final cart = state.cartItems[index];
+                final cart = popularDataPizza[indexPizza];
                 return CartItem(
                   index: index,
                   title: cart.title,
