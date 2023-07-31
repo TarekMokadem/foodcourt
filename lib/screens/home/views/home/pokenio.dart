@@ -27,7 +27,6 @@ class _PokenioState extends State<Pokenio> {
       // height: Get.height,
       body:  Container(
         decoration: BoxDecoration(
-          color: Color(0xCA39BFBF),
           image: DecorationImage(scale: 1,opacity: 0.35,
               image: Image.asset('assets/images/pokebowl.png').image,
               fit: BoxFit.cover

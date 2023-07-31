@@ -27,7 +27,6 @@ class _WollyWingsState extends State<WollyWings> {
       // height: Get.height,
       body: Container(
         decoration: BoxDecoration(
-          color: Color(0xED2D2D2D),
           // color: Color(0xDBE7BE5E),
           image: DecorationImage(opacity: 0.25,
               image: Image.asset('assets/images/boneless.png').image,

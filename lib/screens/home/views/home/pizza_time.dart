@@ -27,8 +27,7 @@ class _PizzaTimeState extends State<PizzaTime> {
       // height: Get.height,
       body: Container(
         decoration: BoxDecoration(
-          color: Color(0xE5147A3D),
-          image: DecorationImage(opacity: 0.5,
+          image: DecorationImage(opacity: 0.35,
               image: Image.asset('assets/images/pizzaTime.png').image,
               fit: BoxFit.cover
           ),

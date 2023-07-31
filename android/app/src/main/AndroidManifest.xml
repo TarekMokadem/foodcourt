@@ -3,6 +3,7 @@
    <application
         android:label="foodcourt"
         android:name="${applicationName}"
+        android:roundIcon="@mipmap/round_launcher_icon"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

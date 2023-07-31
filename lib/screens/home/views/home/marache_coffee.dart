@@ -27,7 +27,6 @@ class _MaracheCoffeeState extends State<MaracheCoffee> {
       // height: Get.height,
       body: Container(
         decoration: BoxDecoration(
-          color: Color(0xBA502C1E),
           image: DecorationImage(scale: 1,opacity: 0.25,
               image: Image.asset('assets/images/onboarding3.png').image,
               fit: BoxFit.cover
