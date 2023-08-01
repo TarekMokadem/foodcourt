@@ -116,7 +116,6 @@ List<PopularModel> popularDataPizza = [
     price: 11.70,
     image: Assets.jollofRice,
     desc: "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
-
   ),
   PopularModel(
     title: 'La Campagnarde',
