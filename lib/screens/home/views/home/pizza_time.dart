@@ -4,9 +4,11 @@ import 'package:foodcourt/constants/data.dart';
 import 'package:foodcourt/screens/home/widgets/app_header.dart';
 import 'package:foodcourt/screens/home/widgets/category_card.dart';
 
+import 'components/carousel.dart';
 import 'components/header_section.dart';
 import 'components/offers_section.dart';
 import '../../widgets/popular_now_card.dart';
+
 
 class PizzaTime extends StatefulWidget {
   const PizzaTime({
@@ -19,7 +21,7 @@ class PizzaTime extends StatefulWidget {
 
 class _PizzaTimeState extends State<PizzaTime> {
   String seletedCategory = '';
-  List<String> favorites = [];
+  List<String> favorites = []; 
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +42,39 @@ class _PizzaTimeState extends State<PizzaTime> {
             const SizedBox(height: 50),
             const AvaterHeaderWithNotifications(),
             const SizedBox(height: 35),
-            //const SearchBar(),
-            searchBox(),
-            const SizedBox(height: 30),
+            const Carousel(),
+            // const SearchBar(),
+            //  searchBox(),
+            // const SizedBox(height: 30),
             // offers section
             // const OffersSection(),
             // const SizedBox(height: 20),
+            //carouselMenus(),
+            
+            // CarouselSlider(
+            //   options: CarouselOptions(
+            //     height: MediaQuery.of(context).size.height * 0.25,
+            //     autoPlay: true,
+            //     autoPlayInterval: const Duration(seconds: 3),
+            //   ),
+            //   items: [1,2,3,4,5].map((i) {
+            //   return Builder(
+            //     builder: (BuildContext context) {
+            //       return Container(
+            //         width: MediaQuery.of(context).size.width,
+            //         margin: const EdgeInsets.symmetric(horizontal: 5.0),
+            //         decoration: const BoxDecoration(
+            //           color: Colors.blue
+            //         ),
+            //         child: Text('text $i', style: const TextStyle(fontSize: 16.0),)
+            //       );
+            //     },
+            //     );
+            //   }).toList(),
+            // ),
+
+
+
             HeaderSection(
               onPressed: () {},
               title: 'Categories',
@@ -87,6 +116,7 @@ class _PizzaTimeState extends State<PizzaTime> {
               title: 'Popular Now',
             ),
 
+            //Popular Now Cards
             SizedBox(
               height: 230,
               child: ListView.separated(
@@ -98,6 +128,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                 separatorBuilder: (context, index) => const SizedBox(width: 23),
                 itemBuilder: (_, index) {
                   final food = popularDataPizza[index];
+                  final pizzaIndex = index; 
                   return PopularNowCard(
                     title: food.title,
                     deliveryTime: food.deliveryTime,
@@ -110,6 +141,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                           ? setState(() => favorites.add(food.title))
                           : setState(() => favorites.remove(food.title));
                     },
+                    index: pizzaIndex,
                   );
                 },
               ),
@@ -150,5 +182,3 @@ Widget searchBox() {
               ),
             );
   }
-
-

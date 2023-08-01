@@ -30,7 +30,7 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Test'),
+          title: const Text('AppBar (?)'),
           actions: <Widget>[
             badges.Badge(
               //position: badges.BadgePosition.topEnd(top: -10, end: -5),

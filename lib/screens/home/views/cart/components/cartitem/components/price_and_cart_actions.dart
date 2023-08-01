@@ -27,7 +27,7 @@ class BuildPriceAndCartActions extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '\$${price.round()}',
+                  '$price €',
                   style: TextStyle(
                     fontSize: 30,
                     color: pinkColor,
