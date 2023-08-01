@@ -14,6 +14,7 @@ class PopularNowCard extends StatelessWidget {
     required this.onLike,
     required this.image,
     this.favorite = false,
+    this.index = 0,
   }) : super(key: key);
 
   final String title;
@@ -23,6 +24,7 @@ class PopularNowCard extends StatelessWidget {
   final VoidCallback onPressed;
   final Function(bool value) onLike;
   final bool favorite;
+  final int index; 
 
   @override
   Widget build(BuildContext context) {
@@ -92,11 +94,12 @@ class PopularNowCard extends StatelessWidget {
                     ),
                     AppIconButton(
                       icon: const Icon(
-                        Icons.add_circle_rounded,
+                        //Icons.add_circle_rounded,
+                        Icons.info_outline,
                         color: Colors.pink,
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CartView()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CartView(indexPizza: this.index)));
                       },
                     ),
                   ],
@@ -114,9 +117,9 @@ class PopularNowCard extends StatelessWidget {
                     Icons.favorite,
                     color: Colors.pink,
                   )
-                : Icon(
+                : const Icon(
                     Icons.favorite_border,
-                    color: greyColor,
+                    color: Colors.white,
                   ),
           ),
         ),
