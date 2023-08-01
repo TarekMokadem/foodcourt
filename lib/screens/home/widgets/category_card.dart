@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:foodcourt/screens/home/widgets/app_circle_image.dart';
 import 'package:foodcourt/themes/app_colors.dart';
 
+import '../views/home/categories.dart';
+
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key? key,
@@ -29,7 +31,9 @@ class CategoryCard extends StatelessWidget {
         child: Material(
           type: MaterialType.card,
           child: InkWell(
-            onTap: () => onSelected(!selected),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Categories(category: category)));
+            },
             child: Ink(
               width: 119,
               // alignment: Alignment.center,

@@ -36,7 +36,7 @@ class _CarouselState extends State<Carousel> {
     return Column(
       children: [
         SizedBox(
-          height: 500,
+          height: 300,
           width: double.infinity,
           child: PageView(
             children: demo,
