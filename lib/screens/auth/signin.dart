@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:foodcourt/screens/auth/signup.dart';
 import 'package:foodcourt/screens/home/home_screen.dart';
 import 'package:foodcourt/screens/onboarding/onboarding_screen.dart';
 import 'package:foodcourt/themes/app_colors.dart';
@@ -11,9 +12,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_screen.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({
-    Key? key,
+  SignIn({
+    Key? key, required this.onNext,
   }) : super(key: key);
+  final VoidCallback onNext;
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -54,6 +56,8 @@ class _SignInState extends State<SignIn> {
       // Navigator.of(context) is not working !
       navigatorKey.currentState!.popUntil((route) => route.isFirst);
     }
+
+
 
     return SingleChildScrollView(
       child: Padding(
@@ -131,7 +135,7 @@ class _SignInState extends State<SignIn> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
-                  onPressed: signIn,
+                  onPressed: widget.onNext,
                   child: Text(
                     'Sign Up',
                     style: TextStyle(

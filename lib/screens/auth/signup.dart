@@ -5,8 +5,9 @@ import 'package:foodcourt/widgets/textfield/app_textfield.dart';
 
 class Signup extends StatefulWidget {
   const Signup({
-    Key? key,
+    Key? key, required this.onNext,
   }) : super(key: key);
+  final VoidCallback onNext;
 
   @override
   State<Signup> createState() => _SignupState();
@@ -42,7 +43,7 @@ class _SignupState extends State<Signup> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
-                  onPressed: () {},
+                  onPressed: widget.onNext,
                   child: Text(
                     'Sign in',
                     style: TextStyle(

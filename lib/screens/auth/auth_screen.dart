@@ -117,8 +117,8 @@ class _AuthScreenState extends State<AuthScreen>
                                   controller: _tabController,
                                   physics: const BouncingScrollPhysics(),
                                   children: [
-                                    SignIn(),
-                                    Signup(),
+                                    SignIn( onNext: () => _tabController.animateTo(1)),
+                                    Signup( onNext: () => _tabController.animateTo(0)),
                                   ],
                                 ),
                               ),
