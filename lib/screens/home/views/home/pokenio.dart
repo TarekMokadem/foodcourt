@@ -38,7 +38,7 @@ class _PokenioState extends State<Pokenio> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-            const AvaterHeaderWithNotifications(),
+             AvaterHeaderWithNotifications(),
             const SizedBox(height: 35),
             searchBox(),
             const SizedBox(height: 30),

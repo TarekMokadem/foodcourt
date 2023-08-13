@@ -1,9 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:foodcourt/screens/home/home_screen.dart';
 import 'package:foodcourt/screens/onboarding/onboarding_screen.dart';
 import 'package:foodcourt/themes/app_colors.dart';
 import 'package:foodcourt/widgets/textfield/app_textfield.dart';
 import 'package:get/get.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'auth_screen.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({
@@ -16,22 +21,52 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   bool rememberMe = false;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+
+    Future signIn() async{
+      try {
+        await auth.signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim()
+        );
+      } on FirebaseAuthException catch (e) {
+        print(e);
+        log("Failed to log in");
+        showDialog(context: context, builder: (BuildContext context){
+          return AlertDialog(
+            title: Text("Error"),
+            content: Text("Email or password incorrect"),
+          );
+        });
+      }
+      // Navigator.of(context) is not working !
+      navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    }
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(29, 0, 29, 0),
         child: Column(
           children: [
             const SizedBox(height: 30),
-            const AppTextFormField(
-              hint: 'Email Address',
+            TextField(controller: emailController,
+              decoration: InputDecoration(labelText: 'Email Address'),
             ),
             const SizedBox(height: 16),
-            const AppTextFormField(
-              hint: 'Password',
-              obscurable: true,
+            TextField(controller: passwordController,
+              decoration: InputDecoration(labelText: 'Password'),
             ),
             const SizedBox(height: 8),
             Row(
@@ -83,9 +118,9 @@ class _SignInState extends State<SignIn> {
             const SizedBox(height: 8),
             AppButton(
               text: 'Sign in',
-              onPressed: () {
-                Get.toNamed(HomeScreen.routeName);
-              },
+              onPressed:
+                signIn,
+                // Get.toNamed(HomeScreen.routeName);
             ),
             const SizedBox(height: 2),
             Row(
@@ -96,7 +131,7 @@ class _SignInState extends State<SignIn> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
-                  onPressed: () {},
+                  onPressed: signIn,
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
@@ -111,5 +146,6 @@ class _SignInState extends State<SignIn> {
         ),
       ),
     );
+
   }
 }

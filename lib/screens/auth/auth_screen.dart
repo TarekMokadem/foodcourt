@@ -1,8 +1,13 @@
+import 'dart:developer';
+import 'dart:ffi';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodcourt/constants/assets_constant.dart';
 import 'package:foodcourt/screens/auth/signin.dart';
 import 'package:foodcourt/screens/auth/signup.dart';
+import 'package:foodcourt/screens/home/home_screen.dart';
 import 'package:foodcourt/themes/app_colors.dart';
 import 'package:get/get.dart';
 
@@ -15,8 +20,12 @@ class AuthScreen extends StatefulWidget {
   State<AuthScreen> createState() => _AuthScreenState();
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class _AuthScreenState extends State<AuthScreen>
     with SingleTickerProviderStateMixin {
+
+  FirebaseAuth auth = FirebaseAuth.instance;
   late TabController _tabController;
   var currentTab = 0;
 
@@ -42,69 +51,88 @@ class _AuthScreenState extends State<AuthScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          height: Get.height,
-          child: Column(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: Get.height * 0.45,
-                child: Image.asset(
-                  Assets.authBg,
-                  fit: BoxFit.fitWidth,
-                ),
-              ),
-              Expanded(
+    navigatorKey: navigatorKey;
+    return StreamBuilder<User?>(
+      stream: auth.authStateChanges(),
+      builder: (context, snapshot) {
+        // if(snapshot.connectionState == ConnectionState.waiting){
+        //   return Center(child: CircularProgressIndicator());
+        // } else
+          if (snapshot.hasError) {
+            log("Failed to log in");
+          return Center(child: Text('Identifiant ou mot de passe incorrect'),);
+        } else if (snapshot.hasData) {
+            log("Loging in");
+          return HomeScreen();
+        }else {
+            return Scaffold(
+              body: SingleChildScrollView(
                 child: SizedBox(
                   width: double.infinity,
-                  // padding: const EdgeInsets.fromLTRB(29, 25, 29, 0),
+                  height: Get.height,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(
-                        padding: EdgeInsets.fromLTRB(22.w, 25.h, 29.w, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            _AuthTabs(
-                              text: 'Sign in',
-                              active: currentTab == 0,
-                              onTap: () {
-                                _tabController.animateTo(0);
-                              },
-                            ),
-                            _AuthTabs(
-                              text: 'Sign up',
-                              active: currentTab == 1,
-                              onTap: () {
-                                _tabController.animateTo(1);
-                              },
-                            ),
-                          ],
+                      SizedBox(
+                        width: double.infinity,
+                        height: Get.height * 0.45,
+                        child: Image.asset(
+                          Assets.authBg,
+                          fit: BoxFit.fitWidth,
                         ),
                       ),
                       Expanded(
-                        child: TabBarView(
-                          controller: _tabController,
-                          physics: const BouncingScrollPhysics(),
-                          children: const [
-                            SignIn(),
-                            Signup(),
-                          ],
+                        child: SizedBox(
+                          width: double.infinity,
+                          // padding: const EdgeInsets.fromLTRB(29, 25, 29, 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding:
+                                    EdgeInsets.fromLTRB(22.w, 25.h, 29.w, 0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    _AuthTabs(
+                                      text: 'Sign in',
+                                      active: currentTab == 0,
+                                      onTap: () {
+                                        _tabController.animateTo(0);
+                                      },
+                                    ),
+                                    _AuthTabs(
+                                      text: 'Sign up',
+                                      active: currentTab == 1,
+                                      onTap: () {
+                                        _tabController.animateTo(1);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: TabBarView(
+                                  controller: _tabController,
+                                  physics: const BouncingScrollPhysics(),
+                                  children: [
+                                    SignIn(),
+                                    Signup(),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
-              )
-            ],
-          ),
-        ),
-      ),
+              ),
+            );
+          }
+        }
     );
   }
 }

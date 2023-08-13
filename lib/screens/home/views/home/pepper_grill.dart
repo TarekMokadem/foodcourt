@@ -38,7 +38,7 @@ class _PPGState extends State<PPG> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-            const AvaterHeaderWithNotifications(),
+             AvaterHeaderWithNotifications(),
             const SizedBox(height: 35),
             searchBox(),
             const SizedBox(height: 30),

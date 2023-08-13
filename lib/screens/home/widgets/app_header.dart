@@ -1,12 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodcourt/constants/assets_constant.dart';
 import 'package:foodcourt/screens/home/widgets/app_circle_image.dart';
 
 class AvaterHeaderWithNotifications extends StatelessWidget {
-  const AvaterHeaderWithNotifications({
+  AvaterHeaderWithNotifications({
     Key? key,
   }) : super(key: key);
+
+  final user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +22,9 @@ class AvaterHeaderWithNotifications extends StatelessWidget {
         const SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
-              'Hello Bella!',
+              user!.email!,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
@@ -40,8 +43,8 @@ class AvaterHeaderWithNotifications extends StatelessWidget {
         // Image.asset(Assets.badgedNotif),
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
-          icon: const NotificationBell(isActive: true),
+          onPressed: () => FirebaseAuth.instance.signOut(),
+          icon: Icon(Icons.arrow_back),
         ),
       ],
     );

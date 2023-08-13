@@ -38,7 +38,7 @@ class _MaracheCoffeeState extends State<MaracheCoffee> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-            const AvaterHeaderWithNotifications(),
+             AvaterHeaderWithNotifications(),
             const SizedBox(height: 35),
             //const SearchBar(),
             searchBox(),
