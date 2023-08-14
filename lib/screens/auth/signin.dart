@@ -46,6 +46,7 @@ class _SignInState extends State<SignIn> {
       } on FirebaseAuthException catch (e) {
         print(e);
         log("Failed to log in");
+        SnackBar(content: Text("Email or password incorrect"),);
         showDialog(context: context, builder: (BuildContext context){
           return AlertDialog(
             title: Text("Error"),
@@ -65,13 +66,9 @@ class _SignInState extends State<SignIn> {
         child: Column(
           children: [
             const SizedBox(height: 30),
-            TextField(controller: emailController,
-              decoration: InputDecoration(labelText: 'Email Address'),
-            ),
+            AppTextFormField(hint: 'Email Address', controller: emailController,),
             const SizedBox(height: 16),
-            TextField(controller: passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-            ),
+            AppTextFormField(hint: 'Password', controller: passwordController, obscurable: true,),
             const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,

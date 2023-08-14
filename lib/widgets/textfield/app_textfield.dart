@@ -4,10 +4,12 @@ class AppTextFormField extends StatefulWidget {
   const AppTextFormField({
     Key? key,
     required this.hint,
+    required this.controller,
     this.obscurable = false,
   }) : super(key: key);
 
   final String hint;
+  final TextEditingController controller;
   final bool obscurable;
 
   @override
@@ -19,7 +21,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextFormField(controller: widget.controller,
       decoration: InputDecoration(
         hintText: widget.hint,
         suffixIcon: widget.obscurable ? renderSuffix : null,
