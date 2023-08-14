@@ -46,11 +46,10 @@ class _SignInState extends State<SignIn> {
       } on FirebaseAuthException catch (e) {
         print(e);
         log("Failed to log in");
-        SnackBar(content: Text("Email or password incorrect"),);
         showDialog(context: context, builder: (BuildContext context){
           return AlertDialog(
             title: Text("Error"),
-            content: Text("Email or password incorrect"),
+            content: Text(e.message!),
           );
         });
       }
