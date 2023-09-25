@@ -4,11 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:foodcourt/constants/assets_constant.dart';
 import 'package:foodcourt/screens/home/widgets/app_circle_image.dart';
 
-class AvaterHeaderWithNotifications extends StatelessWidget {
+class AvaterHeaderWithNotifications extends StatefulWidget {
+  final parentScaffoldkey;
   AvaterHeaderWithNotifications({
-    Key? key,
+    Key? key, required this.parentScaffoldkey,
   }) : super(key: key);
 
+  @override
+  State<AvaterHeaderWithNotifications> createState() => _AvaterHeaderWithNotificationsState();
+}
+
+class _AvaterHeaderWithNotificationsState extends State<AvaterHeaderWithNotifications> {
   final user = FirebaseAuth.instance.currentUser;
 
   @override
@@ -40,11 +46,16 @@ class AvaterHeaderWithNotifications extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        // Image.asset(Assets.badgedNotif),
-        IconButton(
-          padding: EdgeInsets.zero,
-          onPressed: () => FirebaseAuth.instance.signOut(),
-          icon: Icon(Icons.arrow_back),
+        Builder(
+          builder: (context) {
+            return IconButton(
+              padding: EdgeInsets.zero,
+              onPressed: () {
+                widget.parentScaffoldkey.currentState!.openEndDrawer();
+              },
+              icon: Icon(Icons.menu),
+            );
+          }
         ),
       ],
     );

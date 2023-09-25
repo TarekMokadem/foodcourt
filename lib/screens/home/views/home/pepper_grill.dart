@@ -4,12 +4,14 @@ import 'package:foodcourt/constants/data.dart';
 import 'package:foodcourt/screens/home/widgets/app_header.dart';
 import 'package:foodcourt/screens/home/widgets/category_card.dart';
 
+import 'components/drawer.dart';
 import 'components/header_section.dart';
 import 'components/offers_section.dart';
 import '../../widgets/popular_now_card.dart';
 
 class PPG extends StatefulWidget {
-  const PPG({
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+   PPG({
     Key? key,
   }) : super(key: key);
 
@@ -24,6 +26,8 @@ class _PPGState extends State<PPG> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Drawer(child: DrawerContent()),
+      key: widget._scaffoldKey,
       // height: Get.height,
       body: Container(
         decoration: BoxDecoration(
@@ -38,7 +42,7 @@ class _PPGState extends State<PPG> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-             AvaterHeaderWithNotifications(),
+             AvaterHeaderWithNotifications(parentScaffoldkey: widget._scaffoldKey),
             const SizedBox(height: 35),
             searchBox(),
             const SizedBox(height: 30),

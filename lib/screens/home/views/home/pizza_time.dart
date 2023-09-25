@@ -5,13 +5,15 @@ import 'package:foodcourt/screens/home/widgets/app_header.dart';
 import 'package:foodcourt/screens/home/widgets/category_card.dart';
 
 import 'components/carousel.dart';
+import 'components/drawer.dart';
 import 'components/header_section.dart';
 import 'components/offers_section.dart';
 import '../../widgets/popular_now_card.dart';
 
 
 class PizzaTime extends StatefulWidget {
-  const PizzaTime({
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+   PizzaTime({
     Key? key,
   }) : super(key: key);
 
@@ -20,12 +22,15 @@ class PizzaTime extends StatefulWidget {
 }
 
 class _PizzaTimeState extends State<PizzaTime> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   String seletedCategory = '';
   List<String> favorites = []; 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: Drawer(child: DrawerContent()),
+        key: widget._scaffoldKey,
       // height: Get.height,
       body: Container(
         decoration: BoxDecoration(
@@ -40,7 +45,7 @@ class _PizzaTimeState extends State<PizzaTime> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-             AvaterHeaderWithNotifications(),
+            AvaterHeaderWithNotifications(parentScaffoldkey: widget._scaffoldKey),
             const SizedBox(height: 35),
             const Carousel(),
             // const SearchBar(),

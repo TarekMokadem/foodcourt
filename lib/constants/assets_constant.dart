@@ -11,7 +11,7 @@ class Assets {
   static String onb2 = '$imagePath/onboarding2.png';
   static String onb3 = '$imagePath/onboarding3.png';
   static String authBg = '$imagePath/auth_bg.png';
-  static String profilePic = '$imagePath/profile_pic.png';
+  static String profilePic = '$imagePath/blank-profile-picture.png';
   static String profilePic1 = '$imagePath/me.jpg';
 
   static String cake1 = '$imagePath/cake1.png';

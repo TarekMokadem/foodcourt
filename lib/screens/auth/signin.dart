@@ -39,19 +39,58 @@ class _SignInState extends State<SignIn> {
 
     Future signIn() async{
       try {
-        await auth.signInWithEmailAndPassword(
-            email: emailController.text.trim(),
-            password: passwordController.text.trim()
-        );
+        if (passwordController.text.trim().isEmpty ||
+      emailController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+      action: SnackBarAction(
+      label: 'Close',
+      onPressed: () {
+      // Code to execute.
+      },
+      ),
+      content: const Text('Please complete the entire form'),
+      duration: const Duration(milliseconds: 1500),
+      width: 280.0, // Width of the SnackBar.
+      padding: const EdgeInsets.symmetric(
+      horizontal: 8.0, // Inner padding for SnackBar content.
+      ),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      ),
+      ),
+      );
+      } else {
+          await auth.signInWithEmailAndPassword(
+              email: emailController.text.trim(),
+              password: passwordController.text.trim()
+          );
+        }
+
       } on FirebaseAuthException catch (e) {
         print(e);
         log("Failed to log in");
-        showDialog(context: context, builder: (BuildContext context){
-          return AlertDialog(
-            title: Text("Error"),
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            action: SnackBarAction(
+              label: 'Close',
+              onPressed: () {
+                // Code to execute.
+              },
+            ),
             content: Text(e.message!),
-          );
-        });
+            duration: const Duration(milliseconds: 1500),
+            width: 280.0, // Width of the SnackBar.
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8.0, // Inner padding for SnackBar content.
+            ),
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+          ),
+        );
       }
       // Navigator.of(context) is not working !
       navigatorKey.currentState!.popUntil((route) => route.isFirst);

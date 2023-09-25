@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: BuildPages(
           currentPage: currentBottomIndex,
-          pages: const [
+          pages:  [
             // CartView(),
             WollyWings(),
             Pokenio(),

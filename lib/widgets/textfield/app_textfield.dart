@@ -21,8 +21,10 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(controller: widget.controller,
+    return TextField(controller: widget.controller,
       decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: widget.hint,
         hintText: widget.hint,
         suffixIcon: widget.obscurable ? renderSuffix : null,
       ),

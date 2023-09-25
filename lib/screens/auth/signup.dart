@@ -43,37 +43,54 @@ class _SignupState extends State<Signup> {
 
     super.dispose();
   }
+  void snackBar(String message){
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        action: SnackBarAction(
+          label: 'Close',
+          onPressed: () {
+            // Code to execute.
+          },
+        ),
+        content: Text(message),
+        duration: const Duration(milliseconds: 1500),
+        width: 280.0, // Width of the SnackBar.
+        padding: const EdgeInsets.symmetric(
+          horizontal: 8.0, // Inner padding for SnackBar content.
+        ),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+    );
+  }
 
+  Future signUp() async{
+    try {
+      if (passwordController.text.trim() != confirmPasswordController.text.trim()){
+        snackBar('Passwords not identical');
+      }else if (passwordController.text.trim().isEmpty ||
+          confirmPasswordController.text.trim().isEmpty ||
+          emailController.text.trim().isEmpty) {
+        snackBar('Please complete the entire form');
+      } else{
+        await auth.createUserWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim()
+        );
+      }
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      log("Failed to log in");
+      snackBar(e.message!);
+    }
+    // Navigator.of(context) is not working !
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
+  }
   @override
   Widget build(BuildContext context) {
-    Future signUp() async{
-      try {
-        if (passwordController.text.trim() != confirmPasswordController.text.trim()){
-          showDialog(context: context, builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text("Error"),
-              content: Text("Passwords not identical"),
-            );
-          });
-        }  else{
-          await auth.createUserWithEmailAndPassword(
-              email: emailController.text.trim(),
-              password: passwordController.text.trim()
-          );
-      }
-      } on FirebaseAuthException catch (e) {
-        print(e);
-        log("Failed to log in");
-        showDialog(context: context, builder: (BuildContext context){
-          return AlertDialog(
-            title: Text("Error"),
-            content: Text(e.message!),
-          );
-        });
-      }
-      // Navigator.of(context) is not working !
-      navigatorKey.currentState!.popUntil((route) => route.isFirst);
-    }
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(29, 0, 29, 0),
