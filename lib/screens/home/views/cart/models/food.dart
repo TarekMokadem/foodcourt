@@ -5,6 +5,7 @@ class Food {
   final String imagePath;
   final double price;
   final FoodCategory category;
+  final List<FoodBrand> brand;
   List<Addon> availableAddons;
 
   Food({
@@ -13,9 +14,16 @@ class Food {
     required this.imagePath,
     required this.price,
     required this.category,
+    required this.brand,
     required this.availableAddons,
   });
+
+  @override
+  String toString() {
+    return 'Food{name: $name, description: $description, imagePath: $imagePath, price: $price, category: $category, brand: $brand, availableAddons: $availableAddons}';
+  }
 }
+
 
 // food categories
 
@@ -25,6 +33,15 @@ enum FoodCategory {
   sides,
   desserts,
   drinks,
+}
+// food brand
+
+enum FoodBrand {
+  wolly,
+  pokenio,
+  marache,
+  pizzatime,
+  ppg,
 }
 
 // food addons

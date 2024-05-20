@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:foodcourt/screens/home/views/home/components/storage_service.dart';
+import 'package:foodcourt/screens/home/views/home/components/services/storage_service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -26,12 +26,13 @@ class _ProfilePictureState extends State<ProfilePicture> {
   }
 
   Future<void> onProfileTapped() async {
+
     final XFile? imageFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
     if (imageFile == null) return;
 
-    await storageService.uploadFile('profile_1.jpg', imageFile);
+    await storageService.uploadImage('profile_1.jpg', imageFile);
 
     final imageBytes = await imageFile.readAsBytes();
     setState(() {

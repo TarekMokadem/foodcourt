@@ -134,7 +134,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                 itemBuilder: (_, index) {
                   final food = popularDataPizza[index];
                   final pizzaIndex = index; 
-                  return PopularNowCard(
+                  /*return PopularNowCard(
                     title: food.title,
                     deliveryTime: food.deliveryTime,
                     price: food.price,
@@ -148,7 +148,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                           : setState(() => favorites.remove(food.title));
                     },
                     index: pizzaIndex,
-                  );
+                  );*/
                 },
               ),
             ),

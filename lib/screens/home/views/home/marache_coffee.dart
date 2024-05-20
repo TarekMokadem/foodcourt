@@ -102,7 +102,7 @@ class _MaracheCoffeeState extends State<MaracheCoffee> {
                 separatorBuilder: (context, index) => const SizedBox(width: 23),
                 itemBuilder: (_, index) {
                   final food = popularDataPizza[index];
-                  return PopularNowCard(
+                  /*return PopularNowCard(
                     title: food.title,
                     deliveryTime: food.deliveryTime,
                     price: food.price,
@@ -115,7 +115,7 @@ class _MaracheCoffeeState extends State<MaracheCoffee> {
                           ? setState(() => favorites.add(food.title))
                           : setState(() => favorites.remove(food.title));
                     },
-                  );
+                  );*/
                 },
               ),
             ),

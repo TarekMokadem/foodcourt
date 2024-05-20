@@ -101,7 +101,7 @@ class _PokenioState extends State<Pokenio> {
                 separatorBuilder: (context, index) => const SizedBox(width: 23),
                 itemBuilder: (_, index) {
                   final food = popularData[index];
-                  return PopularNowCard(
+                  /*return PopularNowCard(
                     title: food.title,
                     deliveryTime: food.deliveryTime,
                     price: food.price,
@@ -114,7 +114,7 @@ class _PokenioState extends State<Pokenio> {
                           ? setState(() => favorites.add(food.title))
                           : setState(() => favorites.remove(food.title));
                     },
-                  );
+                  );*/
                 },
               ),
             ),

@@ -8,7 +8,7 @@ import 'package:foodcourt/constants/assets_constant.dart';
 import 'package:foodcourt/screens/home/widgets/app_circle_image.dart';
 
 import '../views/cart/cart_page.dart';
-import '../views/home/components/storage_service.dart';
+import '../views/home/components/services/storage_service.dart';
 
 class AvaterHeaderWithNotifications extends StatefulWidget {
   final parentScaffoldkey;

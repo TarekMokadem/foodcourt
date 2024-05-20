@@ -12,7 +12,6 @@ import '../screens/home/views/cart/models/food.dart';
 import 'package:intl/intl.dart';
 import 'package:collection/collection.dart';
 
-
 List<OnboardingInfoData> onboardingData = [
   OnboardingInfoData(
     image: Assets.onb1,
@@ -47,7 +46,7 @@ List<OfferModel> offerData = [
   )
 ];
 
-//categoryData by default 
+//categoryData by default
 List<CategoryModel> categoryData = [
   CategoryModel(
     category: 'Fast Food',
@@ -87,7 +86,7 @@ List<CategoryModel> categoryDataPizza = [
   ),
 ];
 
-//popularData by default 
+//popularData by default
 List<PopularModel> popularData = [
   PopularModel(
     title: 'African Salad',
@@ -116,84 +115,96 @@ List<PopularModel> popularDataPizza = [
     deliveryTime: 12,
     price: 11.90,
     image: Assets.pizzaPimento,
-    desc: "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
+    desc:
+        "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
   ),
   PopularModel(
     title: 'La Bolywood',
     deliveryTime: 15,
     price: 11.70,
     image: Assets.jollofRice,
-    desc: "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
+    desc:
+        "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
     price: 11.70,
     image: Assets.pizza2,
-    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
+    desc:
+        "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
     price: 11.70,
     image: Assets.pizza2,
-    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
+    desc:
+        "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
   PopularModel(
     title: 'La Pimento',
     deliveryTime: 12,
     price: 11.90,
     image: Assets.pizzaPimento,
-    desc: "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
+    desc:
+        "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
   ),
   PopularModel(
     title: 'La Bolywood',
     deliveryTime: 15,
     price: 11.70,
     image: Assets.jollofRice,
-    desc: "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
+    desc:
+        "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
     price: 11.70,
     image: Assets.pizza2,
-    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
+    desc:
+        "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
     price: 11.70,
     image: Assets.pizza2,
-    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
+    desc:
+        "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
   PopularModel(
     title: 'La Pimento',
     deliveryTime: 12,
     price: 11.90,
     image: Assets.pizzaPimento,
-    desc: "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
+    desc:
+        "Sauce chili thai, fromage, sauce tomate, poulet mariné, pepperoni de boeuf, piments forts, poivrons",
   ),
   PopularModel(
     title: 'La Bolywood',
     deliveryTime: 15,
     price: 11.70,
     image: Assets.jollofRice,
-    desc: "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
+    desc:
+        "Crème fraîche, fromage, sauce curry, poivrons, oignons rouges, poulet mariné",
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
     price: 11.70,
     image: Assets.pizza2,
-    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
+    desc:
+        "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
   PopularModel(
     title: 'La Campagnarde',
     deliveryTime: 5,
     price: 11.70,
     image: Assets.pizza2,
-    desc: "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
+    desc:
+        "Crème fraîche, fromage, jambon (de poulet), pomme de terre, champignons, boursin",
   ),
 ];
 
@@ -232,18 +243,18 @@ List<Cart> cartData = [
   ),
 ];
 
-
 class Menu extends ChangeNotifier {
-
   // list of food menu
-  final List<Food> _menu= [
+  final List<Food> _menu = [
     // Burger
     Food(
       name: 'Cheese Burger',
-      description: 'Beef patty, cheese, lettuce, tomato, pickles, onions, mayo, ketchup',
+      description:
+          'Beef patty, cheese, lettuce, tomato, pickles, onions, mayo, ketchup',
       imagePath: 'assets/images/burgers/AI-generated_burger.png',
       price: 5.99,
       category: FoodCategory.burgers,
+      brand: [FoodBrand.ppg],
       availableAddons: [
         Addon(name: 'Extra Cheese', price: 0.50),
         Addon(name: 'Extra Patty', price: 1.50),
@@ -256,10 +267,12 @@ class Menu extends ChangeNotifier {
     ),
     Food(
       name: 'Chicken Burger',
-      description: 'Grilled chicken, lettuce, tomato, pickles, onions, mayo, ketchup',
+      description:
+          'Grilled chicken, lettuce, tomato, pickles, onions, mayo, ketchup',
       imagePath: 'assets/images/burgers/AI-generated_chicken_burger.png',
       price: 6.99,
       category: FoodCategory.burgers,
+      brand: [FoodBrand.wolly],
       availableAddons: [
         Addon(name: 'Extra Chicken', price: 1.50),
         Addon(name: 'Extra Pickles', price: 0.25),
@@ -268,10 +281,12 @@ class Menu extends ChangeNotifier {
     ),
     Food(
       name: 'Veggie Burger',
-      description: 'Veggie patty, lettuce, tomato, pickles, onions, mayo, ketchup',
+      description:
+          'Veggie patty, lettuce, tomato, pickles, onions, mayo, ketchup',
       imagePath: 'assets/images/burgers/AI-generated_veggie_burger.png',
       price: 4.99,
       category: FoodCategory.burgers,
+      brand: [FoodBrand.ppg],
       availableAddons: [
         Addon(name: 'Extra Veggie Patty', price: 1.50),
         Addon(name: 'Extra Pickles', price: 0.25),
@@ -281,10 +296,12 @@ class Menu extends ChangeNotifier {
 
     Food(
       name: 'Fish Burger',
-      description: 'Breaded fish fillet, lettuce, tomato, pickles, onions, tartar sauce',
+      description:
+          'Breaded fish fillet, lettuce, tomato, pickles, onions, tartar sauce',
       imagePath: 'assets/images/burgers/AI-generated_fish_burger.png',
       price: 7.99,
       category: FoodCategory.burgers,
+      brand: [FoodBrand.ppg],
       availableAddons: [
         Addon(name: 'Extra Fish Fillet', price: 1.50),
         Addon(name: 'Extra Pickles', price: 0.25),
@@ -295,10 +312,12 @@ class Menu extends ChangeNotifier {
     // Salad
     Food(
       name: 'Chicken Salad',
-      description: 'Grilled chicken, lettuce, tomato, cucumber, croutons, ranch dressing',
+      description:
+          'Grilled chicken, lettuce, tomato, cucumber, croutons, ranch dressing',
       imagePath: 'assets/images/salads/AI-generated_chicken_salad.png',
       price: 7.99,
       category: FoodCategory.salads,
+      brand: [FoodBrand.wolly],
       availableAddons: [
         Addon(name: 'Extra Chicken', price: 1.50),
         Addon(name: 'Extra Croutons', price: 0.50),
@@ -307,10 +326,12 @@ class Menu extends ChangeNotifier {
     ),
     Food(
       name: 'Caesar Salad',
-      description: 'Romaine lettuce, croutons, parmesan cheese, Caesar dressing',
+      description:
+          'Romaine lettuce, croutons, parmesan cheese, Caesar dressing',
       imagePath: 'assets/images/salads/AI-generated_caesar_salad.png',
       price: 5.99,
       category: FoodCategory.salads,
+      brand: [FoodBrand.ppg],
       availableAddons: [
         Addon(name: 'Extra Croutons', price: 0.50),
         Addon(name: 'Extra Cheese', price: 0.50),
@@ -319,10 +340,12 @@ class Menu extends ChangeNotifier {
     ),
     Food(
       name: 'Garden Salad',
-      description: 'Mixed greens, tomato, cucumber, carrots, red cabbage, choice of dressing',
+      description:
+          'Mixed greens, tomato, cucumber, carrots, red cabbage, choice of dressing',
       imagePath: 'assets/images/salads/AI-generated_garden_salad.png',
       price: 4.99,
       category: FoodCategory.salads,
+      brand: [FoodBrand.pokenio],
       availableAddons: [
         Addon(name: 'Extra Tomato', price: 0.25),
         Addon(name: 'Extra Cucumber', price: 0.25),
@@ -336,6 +359,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/sides/ai-generated-fries.png',
       price: 2.99,
       category: FoodCategory.sides,
+      brand: [FoodBrand.ppg],
       availableAddons: [
         Addon(name: 'Extra Salt', price: 0.25),
         Addon(name: 'Extra Ketchup', price: 0.25),
@@ -348,6 +372,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/sides/ai-generated-onion-rings.png',
       price: 3.99,
       category: FoodCategory.sides,
+      brand: [FoodBrand.pizzatime],
       availableAddons: [
         Addon(name: 'Extra Salt', price: 0.25),
         Addon(name: 'Extra Ketchup', price: 0.25),
@@ -360,6 +385,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/sides/ai-generated-mozzarella-sticks.png',
       price: 4.99,
       category: FoodCategory.sides,
+      brand: [FoodBrand.pizzatime],
       availableAddons: [
         Addon(name: 'Extra Marinara Sauce', price: 0.50),
         Addon(name: 'Extra Ranch Dressing', price: 0.25),
@@ -372,6 +398,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/sides/ai-generated-garlic-bread.png',
       price: 2.99,
       category: FoodCategory.sides,
+      brand: [FoodBrand.pizzatime],
       availableAddons: [
         Addon(name: 'Extra Butter', price: 0.25),
         Addon(name: 'Extra Garlic', price: 0.25),
@@ -385,6 +412,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/desserts/ai-generated-chocolat_cake.png',
       price: 3.99,
       category: FoodCategory.desserts,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Frosting', price: 0.50),
         Addon(name: 'Extra Chocolate Chips', price: 0.25),
@@ -397,6 +425,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/desserts/ai-generated-cheesecake.png',
       price: 4.99,
       category: FoodCategory.desserts,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Whipped Cream', price: 0.50),
         Addon(name: 'Extra Cherry Topping', price: 0.25),
@@ -409,6 +438,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/desserts/ai-generated-apple-pie.png',
       price: 3.99,
       category: FoodCategory.desserts,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Whipped Cream', price: 0.50),
         Addon(name: 'Extra Caramel Sauce', price: 0.25),
@@ -417,6 +447,7 @@ class Menu extends ChangeNotifier {
     ),
     Food(
       name: 'Ice Cream',
+      brand: [FoodBrand.pizzatime],
       description: 'Vanilla, chocolate, strawberry, mint chocolate chip',
       imagePath: 'assets/images/desserts/ai-generated-ice-cream.png',
       price: 2.99,
@@ -433,6 +464,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/desserts/ai-generated-brownie.png',
       price: 3.99,
       category: FoodCategory.desserts,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Walnuts', price: 0.50),
         Addon(name: 'Extra Chocolate Chips', price: 0.25),
@@ -446,6 +478,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-raspberry-coktail.png',
       price: 1.99,
       category: FoodCategory.drinks,
+      brand: [FoodBrand.pokenio],
       availableAddons: [
         Addon(name: 'Extra Ice', price: 0.25),
         Addon(name: 'Extra Lemon', price: 0.25),
@@ -458,6 +491,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-iced-tea.png',
       price: 2.99,
       category: FoodCategory.drinks,
+      brand: [FoodBrand.ppg],
       availableAddons: [
         Addon(name: 'Extra Ice', price: 0.25),
         Addon(name: 'Extra Lemon', price: 0.25),
@@ -470,6 +504,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-coffee.png',
       price: 3.99,
       category: FoodCategory.drinks,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Sugar', price: 0.25),
         Addon(name: 'Extra Cream', price: 0.25),
@@ -482,6 +517,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-milkshake.png',
       price: 4.99,
       category: FoodCategory.drinks,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Whipped Cream', price: 0.50),
         Addon(name: 'Extra Cherry', price: 0.25),
@@ -494,6 +530,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-smoothie.png',
       price: 5.99,
       category: FoodCategory.drinks,
+      brand: [FoodBrand.marache],
       availableAddons: [
         Addon(name: 'Extra Protein Powder', price: 0.50),
         Addon(name: 'Extra Spinach', price: 0.25),
@@ -506,6 +543,13 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-water.png',
       price: 0.99,
       category: FoodCategory.drinks,
+      brand: [
+        FoodBrand.pokenio,
+        FoodBrand.ppg,
+        FoodBrand.pizzatime,
+        FoodBrand.wolly,
+        FoodBrand.marache
+      ],
       availableAddons: [
         Addon(name: 'Extra Ice', price: 0.25),
         Addon(name: 'Extra Lemon', price: 0.25),
@@ -518,6 +562,7 @@ class Menu extends ChangeNotifier {
       imagePath: 'assets/images/drinks/ai-generated-limonade.png',
       price: 3.99,
       category: FoodCategory.drinks,
+      brand: [FoodBrand.wolly],
       availableAddons: [
         Addon(name: 'Extra Lime', price: 0.25),
         Addon(name: 'Extra Sugar', price: 0.25),
@@ -536,22 +581,35 @@ class Menu extends ChangeNotifier {
 
   final List<CartItem> _cart = [];
 
+  // add food item to menu
+  void addFoodItem(Food food) {
+    _menu.add(food);
+    notifyListeners();
+  }
+
+  // remove food item from menu
+  void removeFoodItem(Food food) {
+    _menu.remove(food);
+    notifyListeners();
+  }
+
   // add to cart
   void addToCart(Food food, List<Addon> selectedAddons) {
     // create cart item
     CartItem? cartItem = _cart.firstWhereOrNull((item) {
       bool isSameFood = item.food == food;
-      bool isSameAddons = ListEquality().equals(item.selectedAddons, selectedAddons);
+      bool isSameAddons =
+          ListEquality().equals(item.selectedAddons, selectedAddons);
       return isSameFood && isSameAddons;
     });
 
     if (cartItem != null) {
       cartItem.quantity++;
     } else {
-      _cart.add(CartItem(food: food, selectedAddons: selectedAddons, quantity: 1));
+      _cart.add(
+          CartItem(food: food, selectedAddons: selectedAddons, quantity: 1));
     }
     notifyListeners();
-
   }
 
   // remove from cart
@@ -611,27 +669,28 @@ class Menu extends ChangeNotifier {
   /*HELPERS*/
 
   // generate a receipt
-  String displayCartReceipt(){
-    final receipt= StringBuffer();
+  String displayCartReceipt() {
+    final receipt = StringBuffer();
     receipt.writeln("Here's your receipt:");
     receipt.writeln('----------------------');
 
     //format the date to include up to seconds only
-    String formattedDate = DateFormat('yyyy-MM-dd – kk:mm:ss').format(DateTime.now());
+    String formattedDate =
+        DateFormat('yyyy-MM-dd – kk:mm:ss').format(DateTime.now());
 
     receipt.writeln('Date: $formattedDate');
     receipt.writeln();
     receipt.writeln('----------------------');
 
-    for (final cartItem in _cart){
-      receipt.writeln('${cartItem.quantity}x ${cartItem.food.name} - ${_formatPrice(cartItem.food.price)}');
+    for (final cartItem in _cart) {
+      receipt.writeln(
+          '${cartItem.quantity}x ${cartItem.food.name} - ${_formatPrice(cartItem.food.price)}');
       receipt.writeln('Description: ${cartItem.food.description}');
-      if (cartItem.selectedAddons.isNotEmpty){
+      if (cartItem.selectedAddons.isNotEmpty) {
         receipt.writeln('Addons: ${_formatAddons(cartItem.selectedAddons)}');
       }
       receipt.writeln();
     }
-
 
     receipt.writeln();
     receipt.writeln('----------------------');
@@ -648,7 +707,8 @@ class Menu extends ChangeNotifier {
 
   // format list of addons into a string summary
   String _formatAddons(List<Addon> addons) {
-    return addons.map((addon) => "${addon.name} (${_formatPrice(addon.price)})").join(', ');
+    return addons
+        .map((addon) => "${addon.name} (${_formatPrice(addon.price)})")
+        .join(', ');
   }
-
 }

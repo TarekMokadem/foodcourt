@@ -58,23 +58,33 @@ class _HomeScreenState extends State<HomeScreen> {
               RestaurantScreen(
                 backgroundImage: 'assets/images/boneless.png',
                 menuData: menu.menu,
+                currentBottomIndex: currentBottomIndex,
               ),
               RestaurantScreen(
                 backgroundImage: 'assets/images/pokebowl.png',
                 menuData: menu.menu,
+                currentBottomIndex: currentBottomIndex,
               ),
               RestaurantScreen(
                 backgroundImage: 'assets/images/onboarding3.png',
                 menuData: menu.menu,
+                currentBottomIndex: currentBottomIndex,
               ),
-              PizzaTime(),
+              RestaurantScreen(
+                backgroundImage: 'assets/images/pizzaTime.png',
+                menuData: menu.menu,
+                currentBottomIndex: currentBottomIndex,
+              ),
               RestaurantScreen(
                 backgroundImage: 'assets/images/ppg.png',
                 menuData: menu.menu,
+                currentBottomIndex: currentBottomIndex,
               ),
             ],
             onPageChanged: (value) =>
-                setState(() => currentBottomIndex = value.round()),
+                setState(()  {
+                  currentBottomIndex = value.round();
+                }),
             pageController: pageController,
           ),
         ),

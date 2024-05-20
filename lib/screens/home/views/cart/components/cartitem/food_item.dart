@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +24,7 @@ class FoodPage extends StatefulWidget {
 
 class _FoodPageState extends State<FoodPage> {
   bool hasPopped = false;
+
   // method to add food item to cart
   void addToCart(Food food, Map<Addon, bool> selectedAddons) {
     // close the food page
@@ -44,6 +47,9 @@ class _FoodPageState extends State<FoodPage> {
 
   // quantity of food item to be added to cart
   int quantity = 1;
+
+  bool isAdmin =
+      FirebaseAuth.instance.currentUser?.uid != "Lz5dBpexbQSFp8ajEZhP18ywyyK2";
 
   @override
   Widget build(BuildContext context) {
@@ -108,49 +114,106 @@ class _FoodPageState extends State<FoodPage> {
               ),
               const SizedBox(height: 20),
               // list of addons with price and checkbox
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    itemCount: widget.food.availableAddons.length,
-                    itemBuilder: (context, index) {
-                      // get addon
-                      final addon = widget.food.availableAddons[index];
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        padding: EdgeInsets.zero,
+                        itemCount: widget.food.availableAddons.length,
+                        itemBuilder: (context, index) {
+                          // get addon
+                          final addon = widget.food.availableAddons[index];
 
-                      // return addon tile UI
-                      return CheckboxListTile(
-                        title: Text(
-                          addon.name,
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                        subtitle: Text(
-                          '${addon.price.toStringAsFixed(2)}€',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        ),
-                        value: widget.selectedAddons[addon],
-                        onChanged: (bool? value) {
-                          setState(() {
-                            widget.selectedAddons[addon] = value!;
-                          });
+                          // return addon tile UI
+                          return CheckboxListTile(
+                            title: Text(
+                              addon.name,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                            subtitle: Text(
+                              '${addon.price.toStringAsFixed(2)}€',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                            ),
+                            value: widget.selectedAddons[addon],
+                            onChanged: (bool? value) {
+                              setState(() {
+                                widget.selectedAddons[addon] = value!;
+                              });
+                            },
+                          );
                         },
-                      );
-                    },
+                      ),
+                    ),
                   ),
-                ),
+                  //add addons button
+                  isAdmin
+                      ? Container()
+                      : Container(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            color: Colors.white,
+                            iconSize: 30,
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.red),
+                              shape: MaterialStateProperty.all(CircleBorder()),
+                            ),
+                            icon: const Icon(Icons.add),
+                            onPressed: () {
+                              // show a dialog to add new addon
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: const Text('Add Addon'),
+                                    content: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        // addon name
+                                        TextField(
+                                          decoration: const InputDecoration(
+                                            labelText: 'Addon Name',
+                                          ),
+                                        ),
+                                        const SizedBox(height: 20),
+                                        // addon price
+                                        TextField(
+                                          decoration: const InputDecoration(
+                                            labelText: 'Addon Price',
+                                          ),
+                                        ),
+                                        const SizedBox(height: 20),
+                                        // add addon button
+                                        MyButton(
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                          },
+                                          text: 'Add Addon',
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                            },
+                          );
+                        },
+                        ),
+                  )
+                ],
               ),
               const SizedBox(height: 20),
               Container(
@@ -210,9 +273,10 @@ class _FoodPageState extends State<FoodPage> {
               // add to cart button
               MyButton(
                   onTap: () {
-                    for (int i = 0; i < quantity; i++){
+                    for (int i = 0; i < quantity; i++) {
                       addToCart(widget.food, widget.selectedAddons);
-                    }},
+                    }
+                  },
                   text: 'Add to cart'),
               const SizedBox(height: 30),
             ],
