@@ -106,6 +106,7 @@ class _MaracheCoffeeState extends State<MaracheCoffee> {
                     title: food.title,
                     deliveryTime: food.deliveryTime,
                     price: food.price,
+                    availableAddons : [],
                     image: food.image,
                     onPressed: () {},
                     favorite: favorites.contains(food.title),
@@ -130,10 +131,10 @@ class _MaracheCoffeeState extends State<MaracheCoffee> {
 
 Widget searchBox() {
     return Container(
-              //padding: const EdgeInsets.symmetric(horizontal: 10),
-              decoration: const BoxDecoration(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              decoration:  BoxDecoration(
                 color: Colors.white,
-                //borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: const TextField(
                 decoration: InputDecoration(

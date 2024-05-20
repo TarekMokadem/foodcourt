@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:foodcourt/constants/data.dart';
 import 'package:foodcourt/screens/auth/signup.dart';
 import 'package:foodcourt/screens/home/home_screen.dart';
 import 'package:foodcourt/screens/onboarding/onboarding_screen.dart';
@@ -13,7 +14,8 @@ import 'auth_screen.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({
-    Key? key, required this.onNext,
+    Key? key,
+    required this.onNext,
   }) : super(key: key);
   final VoidCallback onNext;
 
@@ -36,38 +38,37 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-
-    Future signIn() async{
+    Future signIn() async {
       try {
         if (passwordController.text.trim().isEmpty ||
-      emailController.text.trim().isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-      action: SnackBarAction(
-      label: 'Close',
-      onPressed: () {
-      // Code to execute.
-      },
-      ),
-      content: const Text('Please complete the entire form'),
-      duration: const Duration(milliseconds: 1500),
-      width: 280.0, // Width of the SnackBar.
-      padding: const EdgeInsets.symmetric(
-      horizontal: 8.0, // Inner padding for SnackBar content.
-      ),
-      behavior: SnackBarBehavior.floating,
-      shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10.0),
-      ),
-      ),
-      );
-      } else {
+            emailController.text.trim().isEmpty) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              action: SnackBarAction(
+                label: 'Close',
+                onPressed: () {
+                  // Code to execute.
+                },
+              ),
+              content: const Text('Please complete the entire form'),
+              duration: const Duration(milliseconds: 1500),
+              width: 280.0,
+              // Width of the SnackBar.
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0, // Inner padding for SnackBar content.
+              ),
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+          );
+        } else {
           await auth.signInWithEmailAndPassword(
               email: emailController.text.trim(),
-              password: passwordController.text.trim()
-          );
-        }
+              password: passwordController.text.trim());
 
+        }
       } on FirebaseAuthException catch (e) {
         print(e);
         log("Failed to log in");
@@ -81,7 +82,8 @@ class _SignInState extends State<SignIn> {
             ),
             content: Text(e.message!),
             duration: const Duration(milliseconds: 1500),
-            width: 280.0, // Width of the SnackBar.
+            width: 280.0,
+            // Width of the SnackBar.
             padding: const EdgeInsets.symmetric(
               horizontal: 8.0, // Inner padding for SnackBar content.
             ),
@@ -96,17 +98,22 @@ class _SignInState extends State<SignIn> {
       navigatorKey.currentState!.popUntil((route) => route.isFirst);
     }
 
-
-
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(29, 0, 29, 0),
         child: Column(
           children: [
             const SizedBox(height: 30),
-            AppTextFormField(hint: 'Email Address', controller: emailController,),
+            AppTextFormField(
+              hint: 'Email Address',
+              controller: emailController,
+            ),
             const SizedBox(height: 16),
-            AppTextFormField(hint: 'Password', controller: passwordController, obscurable: true,),
+            AppTextFormField(
+              hint: 'Password',
+              controller: passwordController,
+              obscurable: true,
+            ),
             const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -157,9 +164,8 @@ class _SignInState extends State<SignIn> {
             const SizedBox(height: 8),
             AppButton(
               text: 'Sign in',
-              onPressed:
-                signIn,
-                // Get.toNamed(HomeScreen.routeName);
+              onPressed: signIn,
+              // Get.toNamed(HomeScreen.routeName);
             ),
             const SizedBox(height: 2),
             Row(
@@ -185,6 +191,5 @@ class _SignInState extends State<SignIn> {
         ),
       ),
     );
-
   }
 }

@@ -138,6 +138,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                     title: food.title,
                     deliveryTime: food.deliveryTime,
                     price: food.price,
+                    availableAddons : [],
                     image: food.image,
                     onPressed: () {},
                     favorite: favorites.contains(food.title),

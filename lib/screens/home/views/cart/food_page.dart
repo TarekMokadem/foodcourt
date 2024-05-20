@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodcourt/constants/data.dart';
 import 'package:foodcourt/controllers/cart/cart_controller.dart';
-import 'package:foodcourt/models/popular_model.dart';
-import 'package:foodcourt/screens/home/views/cart/components/cartitem/cart_item.dart';
 import 'package:get/get.dart';
 
-class CartView extends StatelessWidget {
-  const CartView({
+import 'components/cartitem/food_item.dart';
+
+class FoodPages extends StatelessWidget {
+  const FoodPages({
     Key? key,
     required this.indexPizza
   }) : super(key: key);
@@ -25,14 +25,14 @@ class CartView extends StatelessWidget {
               itemCount: state.cartItems.length,
               itemBuilder: (context, index) {
                 final cart = popularDataPizza[indexPizza];
-                return CartItem(
+                /*return FoodItem(
                   index: index,
                   title: cart.title,
                   desc: cart.desc,
                   image: cart.image,
                   price: cart.price,
                   rating: cart.rating,
-                );
+                );*/
               },
             ),
           ),

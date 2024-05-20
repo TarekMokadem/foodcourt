@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:foodcourt/screens/home/views/cart/cart_view.dart';
+import 'package:foodcourt/screens/home/views/cart/food_page.dart';
 import 'package:foodcourt/screens/home/views/home/components/bottom_app_bar.dart';
+import 'package:foodcourt/screens/home/views/home/components/restaurant_screen.dart';
 import 'package:foodcourt/screens/home/views/home/marache_coffee.dart';
 import 'package:foodcourt/screens/home/views/home/pepper_grill.dart';
 import 'package:foodcourt/screens/home/views/home/pokenio.dart';
 import 'package:foodcourt/screens/home/views/home/wolly_wings.dart';
 import 'package:foodcourt/screens/home/views/home/pizza_time.dart';
+import 'package:provider/provider.dart';
+
+import '../../constants/data.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -46,19 +50,33 @@ class _HomeScreenState extends State<HomeScreen> {
           }
           return true;
         },
-        child: BuildPages(
-          currentPage: currentBottomIndex,
-          pages:  [
-            // CartView(),
-            WollyWings(),
-            Pokenio(),
-            MaracheCoffee(),
-            PizzaTime(),
-            PPG(),
-          ],
-          onPageChanged: (value) =>
-              setState(() => currentBottomIndex = value.round()),
-          pageController: pageController,
+        child: Consumer<Menu>(
+          builder: (context, menu, child) => BuildPages(
+            currentPage: currentBottomIndex,
+            pages: [
+              // CartView(),
+              RestaurantScreen(
+                backgroundImage: 'assets/images/boneless.png',
+                menuData: menu.menu,
+              ),
+              RestaurantScreen(
+                backgroundImage: 'assets/images/pokebowl.png',
+                menuData: menu.menu,
+              ),
+              RestaurantScreen(
+                backgroundImage: 'assets/images/onboarding3.png',
+                menuData: menu.menu,
+              ),
+              PizzaTime(),
+              RestaurantScreen(
+                backgroundImage: 'assets/images/ppg.png',
+                menuData: menu.menu,
+              ),
+            ],
+            onPageChanged: (value) =>
+                setState(() => currentBottomIndex = value.round()),
+            pageController: pageController,
+          ),
         ),
       ),
     );

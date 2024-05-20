@@ -23,78 +23,81 @@ class AppBottomBar extends StatelessWidget {
           top: BorderSide(color: primaryColor.withOpacity(0.4), width: 0.6),
         ),
       ),
-      child: BottomNavigationBar(
-        currentIndex: currentBottomIndex,
-        landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: scaffoldBgColor,
-        fixedColor: primaryColor,
-        unselectedIconTheme: const IconThemeData(size: 22),
-        selectedIconTheme: IconThemeData(color: primaryColor, size: 24),
-        selectedLabelStyle: TextStyle(color: primaryColor),
-        unselectedItemColor: const Color(0xFF303030).withOpacity(0.7),
-        selectedFontSize: 12.sp,
-        unselectedFontSize: 11.sp,
-        onTap: onTap,
-        items: [
-          BottomNavigationBarItem(
-            label: '',
-            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                color: Colors.transparent,
-                elevation: 3,
-                child: Image.asset(width: 40, 'assets/images/wolly_logo.png')),
-            activeIcon: BottomBarIndicator(
-                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                    color: Colors.transparent,
-                    elevation: 5,child: Image.asset(width: 50, 'assets/images/wolly_logo.png'))),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                color: Colors.transparent,
-                elevation: 5,child: Image.asset(width: 30, 'assets/images/logo_pokenio.png')),
-            activeIcon: BottomBarIndicator(
-                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                    color: Colors.transparent,
-                    elevation: 7,child: Image.asset(width: 40, 'assets/images/logo_pokenio.png'))),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                    color: Colors.transparent,
-                    elevation: 3,child: Image.asset(width: 35, 'assets/images/marache_coffee_logo.png')),
-            activeIcon: BottomBarIndicator(
-                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+      child: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: BottomNavigationBar(
+          currentIndex: currentBottomIndex,
+          landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: scaffoldBgColor,
+          fixedColor: primaryColor,
+          unselectedIconTheme: const IconThemeData(size: 22),
+          selectedIconTheme: IconThemeData(color: primaryColor, size: 24),
+          selectedLabelStyle: TextStyle(color: primaryColor),
+          unselectedItemColor: const Color(0xFF303030).withOpacity(0.7),
+          selectedFontSize: 12.sp,
+          unselectedFontSize: 11.sp,
+          onTap: onTap,
+          items: [
+            BottomNavigationBarItem(
+              label: '',
+              icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
                   color: Colors.transparent,
-                  elevation: 5,
-                  child: Image.asset(
-                      width: 45, 'assets/images/marache_coffee_logo.png'),
-                )),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                color: Colors.transparent,
-                elevation: 10,child: Image.asset(width: 35, 'assets/images/logo_pizza_time.png')),
-            activeIcon: BottomBarIndicator(
-                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                  elevation: 3,
+                  child: Image.asset(width: 40, 'assets/images/wolly_logo.png')),
+              activeIcon: BottomBarIndicator(
+                  icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                      color: Colors.transparent,
+                      elevation: 5,child: Image.asset(width: 50, 'assets/images/wolly_logo.png'))),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
                   color: Colors.transparent,
-                  elevation: 15,
-                  child: Image.asset(
-                      width: 38, 'assets/images/logo_pizza_time.png'),
-                )),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
-                color: Colors.transparent,
-                elevation: 7,child: Image.asset(width: 40, 'assets/images/logo_ppg.png')),
-            activeIcon: BottomBarIndicator(
-                icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                  elevation: 5,child: Image.asset(width: 30, 'assets/images/logo_pokenio.png')),
+              activeIcon: BottomBarIndicator(
+                  icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                      color: Colors.transparent,
+                      elevation: 7,child: Image.asset(width: 40, 'assets/images/logo_pokenio.png'))),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                      color: Colors.transparent,
+                      elevation: 3,child: Image.asset(width: 35, 'assets/images/marache_coffee_logo.png')),
+              activeIcon: BottomBarIndicator(
+                  icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
                     color: Colors.transparent,
-                    elevation: 10,child: Image.asset(width: 50, 'assets/images/logo_ppg.png'))),
-          ),
-        ],
+                    elevation: 5,
+                    child: Image.asset(
+                        width: 45, 'assets/images/marache_coffee_logo.png'),
+                  )),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                  color: Colors.transparent,
+                  elevation: 10,child: Image.asset(width: 35, 'assets/images/logo_pizza_time.png')),
+              activeIcon: BottomBarIndicator(
+                  icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Colors.transparent,
+                    elevation: 15,
+                    child: Image.asset(
+                        width: 38, 'assets/images/logo_pizza_time.png'),
+                  )),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                  color: Colors.transparent,
+                  elevation: 7,child: Image.asset(width: 40, 'assets/images/logo_ppg.png')),
+              activeIcon: BottomBarIndicator(
+                  icon: Material(borderRadius: BorderRadius.all(Radius.circular(50)),
+                      color: Colors.transparent,
+                      elevation: 10,child: Image.asset(width: 50, 'assets/images/logo_ppg.png'))),
+            ),
+          ],
+        ),
       ),
     );
   }

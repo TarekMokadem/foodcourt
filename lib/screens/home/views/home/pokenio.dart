@@ -105,6 +105,7 @@ class _PokenioState extends State<Pokenio> {
                     title: food.title,
                     deliveryTime: food.deliveryTime,
                     price: food.price,
+                    availableAddons : [],
                     image: food.image,
                     onPressed: () {},
                     favorite: favorites.contains(food.title),

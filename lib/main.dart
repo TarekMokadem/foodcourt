@@ -7,24 +7,31 @@ import 'package:foodcourt/screens/splash/splash_screen.dart';
 import 'package:foodcourt/themes/theme.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'constants/data.dart';
+import 'controllers/cart/cart_controller.dart';
 import 'firebase_options.dart';
 
-
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(
-    OrientationBuilder(
-      builder: (context, orientation) {
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-          DeviceOrientation.portraitDown,
-        ]);
-        return const MyApp();
-      },
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Menu()),
+      ],
+      child: OrientationBuilder(
+        builder: (context, orientation) {
+          SystemChrome.setPreferredOrientations([
+            DeviceOrientation.portraitUp,
+            DeviceOrientation.portraitDown,
+          ]);
+          return const MyApp();
+        },
+      ),
     ),
   );
 }
@@ -39,6 +46,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, _) {
+        Get.put(CartController());
         return GetMaterialApp(
           initialBinding: InitialBindings(),
           title: 'foodcourt',
