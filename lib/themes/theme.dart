@@ -25,7 +25,7 @@ class AppTheme {
       ),
       textTheme: Theme.of(context).textTheme.merge(
             GoogleFonts.interTextTheme().copyWith(
-              headline4: GoogleFonts.inter(
+              headlineMedium: GoogleFonts.inter(
                 fontSize: 30.sp,
                 fontWeight: FontWeight.w700,
                 color: primaryTextColor,
