@@ -89,12 +89,6 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
         key: widget._scaffoldKey,
         // height: Get.height,
         body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(scale: 1,opacity: 0.25,
-                image: Image.asset(widget.backgroundImage).image,
-                fit: BoxFit.cover
-            ),
-          ),
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 26.w),
             physics: const BouncingScrollPhysics(),

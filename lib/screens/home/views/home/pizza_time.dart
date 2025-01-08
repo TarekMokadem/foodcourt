@@ -133,7 +133,7 @@ class _PizzaTimeState extends State<PizzaTime> {
                 separatorBuilder: (context, index) => const SizedBox(width: 23),
                 itemBuilder: (_, index) {
                   final food = popularDataPizza[index];
-                  final pizzaIndex = index; 
+                  final pizzaIndex = index;
                   /*return PopularNowCard(
                     title: food.title,
                     deliveryTime: food.deliveryTime,

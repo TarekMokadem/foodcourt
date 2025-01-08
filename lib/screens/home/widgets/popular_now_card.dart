@@ -86,57 +86,63 @@ class PopularNowCard extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        alignment: Alignment.centerLeft,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
+                          horizontal: 14,
                           vertical: 14,
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  title,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    letterSpacing: 1.1,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                        child: SingleChildScrollView(
+                          physics: NeverScrollableScrollPhysics(),
+                          clipBehavior: Clip.none,
+                          scrollDirection: Axis.horizontal,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                title,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                                Text(
-                                  '${deliveryTime.round()} minutes delivery',
-                                  style: const TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.black87,
-                                  ),
-                                ),
-                                const SizedBox(height: 7),
-                                Text(
-                                  '$price €',
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            AppIconButton(
-                              icon: const Icon(
-                                //Icons.add_circle_rounded,
-                                Icons.info_outline,
-                                color: Colors.pink,
                               ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            FoodPage(food: food)));
-                              },
-                            ),
-                          ],
+                              Text(
+                                '${deliveryTime.round()} minutes delivery',
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                              const SizedBox(height: 7),
+                              Row(
+                                spacing: MediaQuery.of(context).size.width * 0.17,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '$price €',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  AppIconButton(
+                                    icon: const Icon(
+                                      //Icons.add_circle_rounded,
+                                      Icons.info_outline,
+                                      color: Colors.pink,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  FoodPage(food: food)));
+                                    },
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],

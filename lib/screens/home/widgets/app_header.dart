@@ -46,65 +46,76 @@ class _AvaterHeaderWithNotificationsState
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          height: 70,
-          width: 70,
-          decoration: BoxDecoration(
-            color: Colors.grey,
-            shape: BoxShape.circle,
-            image: pickedImage != null
-                ? DecorationImage(
-                    image: Image.memory(pickedImage!, fit: BoxFit.cover).image,
-                    fit: BoxFit.cover,
-                  )
-                : null,
+    return Container(
+      // White container like a card with rounded border and elevation
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 0.3,
+            blurRadius: 2,
+            offset: const Offset(0, 2), // changes position of shadow
           ),
-          child: const Center(
-            child: Icon(
-              Icons.person_rounded,
-              color: Colors.black38,
-              size: 35,
-            ),
-          ),
-        ),
-        const SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        ],
+      ),
+
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              user!.email!,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+            Container(
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                shape: BoxShape.circle,
+                image: pickedImage != null
+                    ? DecorationImage(
+                        image: Image.memory(pickedImage!, fit: BoxFit.cover).image,
+                        fit: BoxFit.cover,
+                      )
+                    : null,
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.person_rounded,
+                  color: Colors.black38,
+                  size: 35,
+                ),
               ),
             ),
-            Text(
-              'Hungry? We got you covered!',
-              style: TextStyle(
-                fontWeight: FontWeight.w300,
-                color: Color(0xFF6A6A6A),
-              ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  user!.email!,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(flex: 3,),
+            Cart(isActive: true),
+            Flexible(flex: 2,
+              child: Builder(builder: (context) {
+                return IconButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {
+                    widget.parentScaffoldkey.currentState!.openEndDrawer();
+                  },
+                  icon: Icon(Icons.menu),
+                );
+              }),
             ),
           ],
         ),
-        const Spacer(),
-        Cart(isActive: true),
-        const Spacer(),
-        Flexible(flex: 2,
-          child: Builder(builder: (context) {
-            return IconButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                widget.parentScaffoldkey.currentState!.openEndDrawer();
-              },
-              icon: Icon(Icons.menu),
-            );
-          }),
-        ),
-      ],
+      ),
     );
   }
 }
